@@ -33,7 +33,7 @@ Cada projeto é uma nova chance de aprender, evoluir e transformar imaginação 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,vite,git,github,figma" />
 </div>
-
+---
 ### Estatísticas
 
 <p>
