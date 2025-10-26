@@ -13,7 +13,6 @@ Sou um desenvolvedor que acredita que cada linha de código pode contar uma hist
 Atualmente, estou me aprofundando em **JavaScript**, **React** e **Tailwind CSS**, buscando unir **performance**, **beleza** e **funcionalidade** nas interfaces que construo.
 
 Gosto de transformar ideias em experiências visuais e de aprender algo novo a cada projeto.  
-Ah, e tenho um toque aventureiro — que trago até pros meus códigos 
 
 ---
 
@@ -23,30 +22,26 @@ Ah, e tenho um toque aventureiro — que trago até pros meus códigos
   <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,vite,git,github,figma" />
 </div>
 
-###  Projetos em destaque
+### 📊 Estatísticas
 
-- 🌐 **[Portfólio Pessoal](https://vanderlei-fernandes.dev)** — Meu espaço criativo na web.  
-- ⚔️ **Site de Animes** — Um projeto com um tom aventureiro e visual único.  
-- 🛒 **E-commerce Demo** — Estudo prático de UX e integração de produtos.  
+<p>
+  <img 
+    align="left" 
+    alt="GitHub Stats" 
+    height="200" 
+    style="padding-right: 10px;" 
+    src="https://github-readme-stats.vercel.app/api?username=vanderleifernandesds&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" 
+  />
+<img 
+      align="left" 
+      alt="GitHub Stats" 
+      height="200" 
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=vanderleifernandesds&theme=tokyonight&layout=compact&custom_title=Tecnologias&langs_count=9" 
+  />
 
-> Todos desenvolvidos com **React**, **Vite** e **Tailwind CSS** 💨
+</p>
 
----
 
-###  Estatísticas do GitHub
-
-<div align="center">
-  <img height="150em" src="https://github-readme-stats.vercel.app/api?username=SEU-USUARIO&show_icons=true&theme=tokyonight" />
-  <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SEU-USUARIO&layout=compact&theme=tokyonight" />
-</div>
-
----
-
-###  Onde me encontrar
-
-- 💼 [LinkedIn](https://linkedin.com/in/SEU-LINK)  
-- 📧 **vanderleifds.7000@hotmail.com**  
-- 🐱 [GitHub](https://github.com/SEU-USUARIO)
 
 
 
