@@ -14,7 +14,18 @@ Sou formado em Análise e Desenvolvimento de Sistemas e vejo o código como uma 
 Exploro o universo de JavaScript, React e Tailwind CSS para criar interfaces que combinam beleza, fluidez e propósito.
 
 Cada projeto é uma nova chance de aprender, evoluir e transformar imaginação em experiência.
-
+<div align="center">
+  <a href="https://portifolio-vanderlei.vercel.app/" target="_blank" title="Visite meu portfólio">
+    <img src="https://img.shields.io/badge/Portfólio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfólio" />
+  </a>
+  <a href="https://linkedin.com/in/vanderleifernandesds" target="_blank" title="Visite meu LinkedIn">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:vanderleifds.7000@hotmail.com" title="Envie-me um e-mail">
+    <img src="https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Email" />
+  </a>
+ 
+</div>
 ---
 
 ###  Tecnologias e Ferramentas
