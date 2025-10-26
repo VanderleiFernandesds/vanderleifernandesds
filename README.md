@@ -10,10 +10,10 @@
 
 ###  Sobre mim
 
-Sou um desenvolvedor que acredita que cada linha de código pode contar uma história.  
-Atualmente, estou me aprofundando em **JavaScript**, **React** e **Tailwind CSS**, buscando unir **performance**, **beleza** e **funcionalidade** nas interfaces que construo.
+Sou formado em Análise e Desenvolvimento de Sistemas e vejo o código como uma forma de dar vida a ideias.
+Exploro o universo de JavaScript, React e Tailwind CSS para criar interfaces que combinam beleza, fluidez e propósito.
 
-Gosto de transformar ideias em experiências visuais e de aprender algo novo a cada projeto.  
+Cada projeto é uma nova chance de aprender, evoluir e transformar imaginação em experiência.
 
 ---
 
@@ -23,7 +23,7 @@ Gosto de transformar ideias em experiências visuais e de aprender algo novo a c
   <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,vite,git,github,figma" />
 </div>
 
-### 📊 Estatísticas
+### Estatísticas
 
 <p>
   <img 
