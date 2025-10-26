@@ -1,5 +1,6 @@
-<h1 align="center">👋 Olá, eu sou o Vanderlei Fernandes</h1>
-
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:0284c7&height=180&section=header&text=👋%20Olá,%20sou%20Vanderlei%20Fernandes%20&fontSize=30&fontColor=fff&animation=twinkling" />
+</p>
 <p align="center">
   💻 <b>Desenvolvedor Front-End</b> apaixonado por tecnologia, design e boas experiências digitais.<br/>
    Sempre em busca de evoluir minhas habilidades e criar projetos com propósito.
