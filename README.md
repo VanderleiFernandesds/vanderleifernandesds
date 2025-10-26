@@ -30,7 +30,7 @@ Cada projeto é uma nova chance de aprender, evoluir e transformar imaginação 
 
 ###  Tecnologias e Ferramentas
 
-<div align="center">
+<div align="left">
   <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,vite,git,github,figma" />
 </div>
 
