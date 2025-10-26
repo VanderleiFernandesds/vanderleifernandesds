@@ -1,4 +1,4 @@
-<h1 align="center">👋 Olá, eu sou o Vanderlei Fernandes da Silva</h1>
+<h1 align="center">👋 Olá, eu sou o Vanderlei Fernandes</h1>
 
 <p align="center">
   💻 <b>Desenvolvedor Front-End</b> apaixonado por tecnologia, design e boas experiências digitais.<br/>
@@ -13,7 +13,7 @@ Sou um desenvolvedor que acredita que cada linha de código pode contar uma hist
 Atualmente, estou me aprofundando em **JavaScript**, **React** e **Tailwind CSS**, buscando unir **performance**, **beleza** e **funcionalidade** nas interfaces que construo.
 
 Gosto de transformar ideias em experiências visuais e de aprender algo novo a cada projeto.  
-Ah, e tenho um toque aventureiro — que trago até pros meus códigos ⚔️✨
+Ah, e tenho um toque aventureiro — que trago até pros meus códigos 
 
 ---
 
@@ -22,17 +22,6 @@ Ah, e tenho um toque aventureiro — que trago até pros meus códigos ⚔️✨
 <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind,vite,git,github,figma" />
 </div>
-
----
-
-###  Em constante aprendizado
-
-- JavaScript moderno e avançado (DOM, eventos, POO, APIs)
-- React (hooks, componentes reutilizáveis, estado global)
-- Tailwind CSS e design responsivo
-- Integração com APIs e ferramentas do ecossistema front-end
-
----
 
 ###  Projetos em destaque
 
@@ -59,7 +48,5 @@ Ah, e tenho um toque aventureiro — que trago até pros meus códigos ⚔️✨
 - 📧 **vanderleifds.7000@hotmail.com**  
 - 🐱 [GitHub](https://github.com/SEU-USUARIO)
 
----
 
-<h3 align="center">⭐ “Código é como arte — cada linha deve contar uma história.”</h3>
 
