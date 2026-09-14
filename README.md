@@ -15,7 +15,7 @@ Exploro o universo de JavaScript, React e Tailwind CSS para criar interfaces que
 
 Cada projeto é uma nova chance de aprender, evoluir e transformar imaginação em experiência.
 <div align="left">
-  <a href="https://portifolio-vanderlei.vercel.app/" target="_blank" title="Visite meu portfólio">
+  <a href="" target="_blank" title="Visite meu portfólio">
     <img src="https://img.shields.io/badge/Portfólio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfólio" />
   </a>
   <a href="https://linkedin.com/in/vanderleifernandesds" target="_blank" title="Visite meu LinkedIn">
