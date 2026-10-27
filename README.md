@@ -70,8 +70,8 @@ Gosto de transformar ideias em aplicações web que combinam identidade visual, 
 
 <p align="center">
   <img
-    src="https://skillicons.dev/icons?i=figma,vite,git,github,vscode&theme=dark"
-    alt="Figma, Vite, Git, GitHub e Visual Studio Code"
+    src="https://skillicons.dev/icons?i=figma,git,github,vscode, claude&theme=dark"
+    alt="Figma,Git, GitHub, Visual Studio Code e Claude"
   />
 </p>
 
