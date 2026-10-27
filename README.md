@@ -14,9 +14,6 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-vanderlei.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfólio-0284C7?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfólio" />
-  </a>
   <a href="https://www.linkedin.com/in/vanderleifernandesds">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
@@ -132,15 +129,6 @@ Uma proposta independente de redesign para um e-commerce de tecnologia, desenvol
 
 ---
 
-<p align="center">
-  <strong>Vamos conversar sobre seu próximo projeto?</strong>
-  <br /><br />
-  <a href="https://portfolio-vanderlei.vercel.app/">Portfólio</a>
-  &nbsp; • &nbsp;
-  <a href="https://www.linkedin.com/in/vanderleifernandesds">LinkedIn</a>
-  &nbsp; • &nbsp;
-  <a href="mailto:vanderleifds.7000@hotmail.com">E-mail</a>
-</p>
 
 <img
   src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:0369a1&height=110&section=footer"
