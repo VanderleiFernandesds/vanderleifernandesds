@@ -431,9 +431,9 @@ function buildActivity(days) {
   const total = pts.reduce((s, p) => s + p.v, 0);
   const active = pts.filter((p) => p.v > 0).length;
   const maxV = Math.max(...pts.map((p) => p.v), 1);
-  const raw = (maxV * 1.12) / 4;
+  const raw = (maxV * 1.05) / 4;
   const mag = 10 ** Math.floor(Math.log10(raw));
-  const step = Math.max(1, [1, 2, 2.5, 5, 10].map((m) => m * mag).find((v) => v >= raw));
+  const step = Math.max(1, Math.ceil([1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].map((m) => m * mag).find((v) => v >= raw)));
   const yMax = step * 4;
   const L = 110, R = 1450, T = 175, B = 395;
   const X = (i) => L + ((R - L) * i) / 30;
