@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1530 470" width="1530" height="470" role="img" aria-labelledby="t d">
+<title id="t">Atividade no GitHub de Vanderlei Fernandes</title>
+<desc id="d">Contribuições por dia nos últimos 31 dias.</desc>
+<style>
+text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif;font-variant-numeric:tabular-nums}
+.ln{stroke-dasharray:4000;stroke-dashoffset:0;animation:draw 2.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes draw{from{stroke-dashoffset:4000}to{stroke-dashoffset:0}}
+.ar,.dt{animation:fade 1s ease 1.2s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+  <linearGradient id="aFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6" stop-opacity="0.35"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient>
+  <linearGradient id="aLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+</defs>
+<rect width="1530" height="470" rx="28" fill="#0D1117"/>
+<rect x="0.5" y="0.5" width="1529" height="469" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+<rect x="55" y="40" width="49" height="48" rx="10" fill="#3B2380"/><g transform="translate(66.1 50.6) scale(1.120)"><path fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M3 17l5-6 4 3 4-6 5 4"/></g>
+
+<text x="128" y="72" font-size="23" font-weight="700" fill="#F3F4F6">Atividade nos últimos 31 dias</text>
+<rect x="1306" y="42" width="174" height="44" rx="22" fill="#161B24" stroke="#1F2633"/><text x="1392.8" y="69" text-anchor="middle" font-size="15" fill="#C9D1D9">37 contribuições</text>
+<rect x="1136" y="42" width="158" height="44" rx="22" fill="#161B24" stroke="#1F2633"/><text x="1214.8" y="69" text-anchor="middle" font-size="15" fill="#C9D1D9">11 dias ativos</text>
+<line x1="110" y1="395.0" x2="1450" y2="395.0" stroke="#FFFFFF" stroke-opacity="0.18" /><text x="96" y="401.0" text-anchor="end" font-size="17" fill="#C9D1D9">0</text>
+<line x1="110" y1="340.0" x2="1450" y2="340.0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-dasharray="5 6"/><text x="96" y="346.0" text-anchor="end" font-size="17" fill="#C9D1D9">5</text>
+<line x1="110" y1="285.0" x2="1450" y2="285.0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-dasharray="5 6"/><text x="96" y="291.0" text-anchor="end" font-size="17" fill="#C9D1D9">10</text>
+<line x1="110" y1="230.0" x2="1450" y2="230.0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-dasharray="5 6"/><text x="96" y="236.0" text-anchor="end" font-size="17" fill="#C9D1D9">15</text>
+<line x1="110" y1="175.0" x2="1450" y2="175.0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-dasharray="5 6"/><text x="96" y="181.0" text-anchor="end" font-size="17" fill="#C9D1D9">20</text>
+<text x="110.0" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">30 set</text>
+<text x="333.3" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">5 out</text>
+<text x="556.7" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">10 out</text>
+<text x="780.0" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">15 out</text>
+<text x="1003.3" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">20 out</text>
+<text x="1226.7" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">25 out</text>
+<text x="1450.0" y="425" text-anchor="middle" font-size="16" fill="#C9D1D9">30 out</text>
+
+<path class="ar" d="M110.0 395.0C117.4 395.0 139.8 395.0 154.7 395.0C169.6 395.0 184.4 395.0 199.3 395.0C214.2 395.0 229.1 395.0 244.0 395.0C258.9 395.0 273.8 395.0 288.7 395.0C303.6 395.0 318.4 395.0 333.3 395.0C348.2 389.5 363.1 362.0 378.0 362.0C392.9 362.0 407.8 389.5 422.7 395.0C437.6 395.0 452.4 395.0 467.3 395.0C482.2 395.0 497.1 395.0 512.0 395.0C526.9 395.0 541.8 395.0 556.7 395.0C571.6 389.5 586.4 367.5 601.3 362.0C616.2 356.5 631.1 356.5 646.0 362.0C660.9 367.5 675.8 389.5 690.7 395.0C705.6 395.0 720.4 395.0 735.3 395.0C750.2 395.0 765.1 395.0 780.0 395.0C794.9 393.2 809.8 384.0 824.7 384.0C839.6 384.0 854.4 393.2 869.3 395.0C884.2 395.0 899.1 395.0 914.0 395.0C928.9 395.0 943.8 395.0 958.7 395.0C973.6 395.0 988.4 395.0 1003.3 395.0C1018.2 391.3 1033.1 373.0 1048.0 373.0C1062.9 373.0 1077.8 391.3 1092.7 395.0C1107.6 395.0 1122.4 395.0 1137.3 395.0C1152.2 395.0 1167.1 395.0 1182.0 395.0C1196.9 391.3 1211.8 380.3 1226.7 373.0C1241.6 365.7 1256.4 354.7 1271.3 351.0C1286.2 347.3 1301.1 345.5 1316.0 351.0C1330.9 356.5 1345.8 384.0 1360.7 384.0C1375.6 384.0 1390.4 367.5 1405.3 351.0C1420.2 334.5 1442.6 296.0 1450.0 285.0L1450 395L110 395Z" fill="url(#aFill)"/>
+<path class="ln" d="M110.0 395.0C117.4 395.0 139.8 395.0 154.7 395.0C169.6 395.0 184.4 395.0 199.3 395.0C214.2 395.0 229.1 395.0 244.0 395.0C258.9 395.0 273.8 395.0 288.7 395.0C303.6 395.0 318.4 395.0 333.3 395.0C348.2 389.5 363.1 362.0 378.0 362.0C392.9 362.0 407.8 389.5 422.7 395.0C437.6 395.0 452.4 395.0 467.3 395.0C482.2 395.0 497.1 395.0 512.0 395.0C526.9 395.0 541.8 395.0 556.7 395.0C571.6 389.5 586.4 367.5 601.3 362.0C616.2 356.5 631.1 356.5 646.0 362.0C660.9 367.5 675.8 389.5 690.7 395.0C705.6 395.0 720.4 395.0 735.3 395.0C750.2 395.0 765.1 395.0 780.0 395.0C794.9 393.2 809.8 384.0 824.7 384.0C839.6 384.0 854.4 393.2 869.3 395.0C884.2 395.0 899.1 395.0 914.0 395.0C928.9 395.0 943.8 395.0 958.7 395.0C973.6 395.0 988.4 395.0 1003.3 395.0C1018.2 391.3 1033.1 373.0 1048.0 373.0C1062.9 373.0 1077.8 391.3 1092.7 395.0C1107.6 395.0 1122.4 395.0 1137.3 395.0C1152.2 395.0 1167.1 395.0 1182.0 395.0C1196.9 391.3 1211.8 380.3 1226.7 373.0C1241.6 365.7 1256.4 354.7 1271.3 351.0C1286.2 347.3 1301.1 345.5 1316.0 351.0C1330.9 356.5 1345.8 384.0 1360.7 384.0C1375.6 384.0 1390.4 367.5 1405.3 351.0C1420.2 334.5 1442.6 296.0 1450.0 285.0" fill="none" stroke="url(#aLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="dt"><circle cx="378.0" cy="362.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="601.3" cy="362.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="646.0" cy="362.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="824.7" cy="384.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1048.0" cy="373.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1226.7" cy="373.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1271.3" cy="351.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1316.0" cy="351.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1360.7" cy="384.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1405.3" cy="351.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/><circle cx="1450.0" cy="285.0" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/></g>
+</svg>
