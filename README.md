@@ -21,8 +21,8 @@
 
 ### 🧰 Tecnologias e ferramentas
 
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vite,tailwind,nextjs,nodejs,python,fastapi,figma,git,github&perline=7" alt="Tecnologias e ferramentas" />
+<p align="center">
+  <img width="100%" src="assets/tech-stack.svg" alt="Front-End: HTML, CSS, JavaScript, TypeScript, React, Next.js, Vite, Tailwind CSS. Back-End: Node.js, Express, MySQL, Python, FastAPI. Ferramentas: Figma, Git, GitHub." />
 </p>
 
 ---
