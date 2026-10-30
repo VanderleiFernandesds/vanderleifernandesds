@@ -138,7 +138,6 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
-  <linearGradient id="tg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#EC4899"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
   <linearGradient id="ib" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9F7AFA"/><stop offset="1" stop-color="#6D3FE6"/></linearGradient>
 </defs>
 <rect width="${TW}" height="${TH}" rx="28" fill="#0D1117"/>
@@ -146,7 +145,7 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
 <g class="in" transform="translate(20 10)">
 <rect x="20" y="22" width="86" height="84" rx="18" fill="url(#ib)"/>
 <g transform="translate(39 40) scale(2)">${rocket}</g>
-<text x="134" y="68" font-size="46" font-weight="800" fill="#FFFFFF" letter-spacing="-0.6">Projetos em <tspan fill="url(#tg)">destaque</tspan></text>
+<text x="134" y="68" font-size="46" font-weight="800" fill="#FFFFFF" letter-spacing="-0.6">Projetos em <tspan fill="#8B5CF6">destaque</tspan></text>
 <text x="136" y="102" font-size="20" fill="#A3ACBD">Interfaces, produtos e experimentos que construí do design ao código</text>
 <g transform="translate(1470 64)" text-anchor="end">
 <text font-size="56" font-weight="800" fill="#FFFFFF" fill-opacity="0.08" y="18">0${PROJECTS.length}</text>
