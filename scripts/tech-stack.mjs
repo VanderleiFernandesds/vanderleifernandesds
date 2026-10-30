@@ -34,7 +34,7 @@ const GROUPS = [
 
 const W = 1530;
 const C_TILE = "#121721", C_EDGE = "#1F2633", C_TEXT = "#F3F4F6", C_MUTED = "#C9D1D9";
-const PILL_H = 58, GAP = 14, PAD = 28, TOP = 120, HEAD = 92;
+const PILL_H = 74, GAP = 14, PAD = 28, TOP = 120, HEAD = 92;
 const rows = Math.max(...GROUPS.map((g) => Math.ceil(g.items.length / g.cols)));
 const TILE_H = HEAD + rows * PILL_H + (rows - 1) * GAP + PAD;
 const H = TOP + TILE_H + 42;
@@ -80,9 +80,9 @@ GROUPS.forEach((g, gi) => {
     const color = light || `#${icon.hex}`;
     body += `<g class="in" style="animation-delay:${delay.toFixed(2)}s">`;
     body += `<rect x="${px.toFixed(1)}" y="${py}" width="${pillW.toFixed(1)}" height="${PILL_H}" rx="14" fill="#161B24" stroke="${C_EDGE}"/>`;
-    body += `<rect x="${(px + 10).toFixed(1)}" y="${py + 10}" width="38" height="38" rx="10" fill="${color}" fill-opacity="0.14"/>`;
-    body += `<g transform="translate(${(px + 18).toFixed(1)} ${py + 18}) scale(0.9167)"><path fill="${color}" d="${icon.path}"/></g>`;
-    body += `<text x="${(px + 62).toFixed(1)}" y="${py + 36}" font-size="18" font-weight="500" fill="${C_TEXT}">${name}</text></g>\n`;
+    body += `<rect x="${(px + 11).toFixed(1)}" y="${py + 11}" width="52" height="52" rx="13" fill="${color}" fill-opacity="0.14"/>`;
+    body += `<g transform="translate(${(px + 20).toFixed(1)} ${py + 20}) scale(1.4167)"><path fill="${color}" d="${icon.path}"/></g>`;
+    body += `<text x="${(px + 74).toFixed(1)}" y="${py + 43}" font-size="18" font-weight="500" fill="${C_TEXT}">${name}</text></g>\n`;
     delay += 0.05;
   });
   x += w + GAP * 2;
