@@ -58,11 +58,11 @@
       <circle cx="1320" cy="340" r="204" fill="none" stroke="url(#ring)" stroke-width="3" stroke-dasharray="580 40"/>
       <circle cx="1320" cy="340" r="184" fill="#111D32" stroke="#334766" stroke-width="2"/>
       <g clip-path="url(#avatar)">
-        <rect x="1136" y="156" width="368" height="368" fill="#101B30"/>
-        <circle cx="1320" cy="270" r="72" fill="#263B5B"/>
-        <path d="M1180 520c12-112 65-166 140-166s128 54 140 166" fill="#263B5B"/>
-        <path d="M1244 265c8-48 35-74 76-74 42 0 69 28 76 74-19-17-44-27-76-27s-57 10-76 27" fill="#3D587D"/>
-        <text class="sans" x="1320" y="475" text-anchor="middle" font-size="17" letter-spacing="3" fill="#A5B4FC">ADICIONE SUA FOTO</text>
+        <rect x="1136" y="156" width="368" height="368" fill="#0D172B"/>
+        <circle cx="1320" cy="340" r="150" fill="url(#glowA)"/>
+        <text class="sans" x="1320" y="380" text-anchor="middle" font-size="136" font-weight="800" letter-spacing="-6" fill="url(#ring)">VF</text>
+        <path d="M1250 412H1390" stroke="url(#shine)" stroke-width="2"/>
+        <text x="1320" y="452" text-anchor="middle" font-family="Fira Code,JetBrains Mono,Consolas,monospace" font-size="22" font-weight="600" fill="#67E8F9">&lt;/&gt;</text>
       </g>
       <circle cx="1460" cy="208" r="12" fill="#22D3EE" stroke="#080E1C" stroke-width="6"/>
       <circle cx="1180" cy="470" r="9" fill="#818CF8" stroke="#080E1C" stroke-width="5"/>
