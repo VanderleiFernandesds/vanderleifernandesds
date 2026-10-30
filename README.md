@@ -3,12 +3,8 @@
 </p>
 
 <p align="center">
-  Desenvolvedor Full Stack com foco em Front-End e UI/UX. Gosto de transformar ideias em interfaces intuitivas, funcionais e visualmente consistentes.
-  <br />
-  <a href="https://portfolio-vanderlei.vercel.app/"><b>Ver portfólio →</b></a>
+  <a href="https://portfolio-vanderlei.vercel.app/"><img width="98%" src="assets/intro.svg" alt="Sobre mim: Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Pós-graduando em Inteligência Artificial. Freelancer de sites e sistemas. Ver portfólio." /></a>
 </p>
-
----
 
 <p align="center">
   <img width="98%" src="assets/projects/title.svg" alt="Projetos em destaque" />
