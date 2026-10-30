@@ -1,5 +1,11 @@
 <p align="center">
-  <a href="https://portfolio-vanderlei.vercel.app/"><img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. Pós-graduando em IA. Freelancer. Ver portfólio." width="98%" /></a>
+  <img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. ADS, UNICID. Pós-graduando em IA. Freelancer." width="98%" />
+</p>
+
+<p align="center">
+  <a href="https://portfolio-vanderlei.vercel.app/"><img height="40" src="assets/btn-portfolio.svg" alt="Ver portfólio" /></a>
+  <a href="https://www.linkedin.com/in/vanderleifernandesds"><img height="40" src="assets/btn-linkedin.svg" alt="LinkedIn" /></a>
+  <a href="mailto:vanderleifds.7000@hotmail.com"><img height="40" src="assets/btn-email.svg" alt="E-mail: vanderleifds.7000@hotmail.com" /></a>
 </p>
 
 <p align="center">

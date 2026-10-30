@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 56" width="206" height="56" role="img" aria-label="Ver portfólio">
+<style>text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif}</style>
+<rect x="1" y="1" width="204" height="54" rx="27" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5"/>
+<g transform="translate(162.2 20)"><path d="M2 14L14 2M5 2h9v9" fill="none" stroke="#0D1117" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="28.0" y="34.5" font-size="18" font-weight="700" fill="#0D1117">Ver portfólio</text>
+</svg>

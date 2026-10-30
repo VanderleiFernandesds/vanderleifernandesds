@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1530 540" width="1530" height="540" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1530 440" width="1530" height="440" role="img" aria-labelledby="t d">
 <title id="t">Vanderlei Fernandes, Full Stack Developer</title>
-<desc id="d">Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Pós-graduando em IA. Freelancer. Análise e Desenvolvimento de Sistemas, UNICID.</desc>
+<desc id="d">Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Análise e Desenvolvimento de Sistemas, UNICID. Pós-graduando em IA. Freelancer.</desc>
 <style>
 text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif}
 .in{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
@@ -11,15 +11,15 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
 </style>
 <defs>
   <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.05"/></pattern>
-  <clipPath id="frame"><rect width="1530" height="540" rx="28"/></clipPath>
+  <clipPath id="frame"><rect width="1530" height="440" rx="28"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-  <rect width="1530" height="540" fill="#0D1117"/>
-  <rect width="1530" height="540" fill="url(#dots)"/>
-  <g stroke="#26324A" stroke-width="1.5"><line x1="42" y1="90" x2="119" y2="150"/><line x1="119" y1="150" x2="77" y2="260"/><line x1="119" y1="150" x2="175" y2="70"/><line x1="175" y1="70" x2="210" y2="210"/><line x1="77" y1="260" x2="210" y2="210"/><line x1="77" y1="260" x2="49" y2="400"/><line x1="49" y1="400" x2="140" y2="360"/><line x1="140" y1="360" x2="203" y2="470"/><line x1="210" y1="210" x2="140" y2="360"/><line x1="1488" y1="90" x2="1411" y2="150"/><line x1="1411" y1="150" x2="1453" y2="260"/><line x1="1411" y1="150" x2="1355" y2="70"/><line x1="1355" y1="70" x2="1320" y2="210"/><line x1="1453" y1="260" x2="1320" y2="210"/><line x1="1453" y1="260" x2="1481" y2="400"/><line x1="1481" y1="400" x2="1390" y2="360"/><line x1="1390" y1="360" x2="1327" y2="470"/><line x1="1320" y1="210" x2="1390" y2="360"/></g>
-  <g fill="#3A4A6B"><circle cx="42" cy="90" r="4.5"/><circle cx="119" cy="150" r="3.5"/><circle cx="77" cy="260" r="3.5" class="pulse"/><circle cx="175" cy="70" r="4.5"/><circle cx="210" cy="210" r="3.5"/><circle cx="49" cy="400" r="3.5"/><circle cx="140" cy="360" r="4.5" class="pulse"/><circle cx="203" cy="470" r="3.5"/><circle cx="1488" cy="90" r="3.5"/><circle cx="1411" cy="150" r="4.5"/><circle cx="1453" cy="260" r="3.5" class="pulse"/><circle cx="1355" cy="70" r="3.5"/><circle cx="1320" cy="210" r="4.5"/><circle cx="1481" cy="400" r="3.5"/><circle cx="1390" cy="360" r="3.5" class="pulse"/><circle cx="1327" cy="470" r="4.5"/></g>
+  <rect width="1530" height="440" fill="#0D1117"/>
+  <rect width="1530" height="440" fill="url(#dots)"/>
+  <g stroke="#26324A" stroke-width="1.5"><line x1="42" y1="90" x2="119" y2="150"/><line x1="119" y1="150" x2="77" y2="260"/><line x1="119" y1="150" x2="175" y2="70"/><line x1="175" y1="70" x2="210" y2="210"/><line x1="77" y1="260" x2="210" y2="210"/><line x1="77" y1="260" x2="49" y2="395"/><line x1="49" y1="395" x2="140" y2="360"/><line x1="140" y1="360" x2="203" y2="395"/><line x1="210" y1="210" x2="140" y2="360"/><line x1="1488" y1="90" x2="1411" y2="150"/><line x1="1411" y1="150" x2="1453" y2="260"/><line x1="1411" y1="150" x2="1355" y2="70"/><line x1="1355" y1="70" x2="1320" y2="210"/><line x1="1453" y1="260" x2="1320" y2="210"/><line x1="1453" y1="260" x2="1481" y2="395"/><line x1="1481" y1="395" x2="1390" y2="360"/><line x1="1390" y1="360" x2="1327" y2="395"/><line x1="1320" y1="210" x2="1390" y2="360"/></g>
+  <g fill="#3A4A6B"><circle cx="42" cy="90" r="4.5"/><circle cx="119" cy="150" r="3.5"/><circle cx="77" cy="260" r="3.5" class="pulse"/><circle cx="175" cy="70" r="4.5"/><circle cx="210" cy="210" r="3.5"/><circle cx="49" cy="395" r="3.5"/><circle cx="140" cy="360" r="4.5" class="pulse"/><circle cx="203" cy="395" r="3.5"/><circle cx="1488" cy="90" r="3.5"/><circle cx="1411" cy="150" r="4.5"/><circle cx="1453" cy="260" r="3.5" class="pulse"/><circle cx="1355" cy="70" r="3.5"/><circle cx="1320" cy="210" r="4.5"/><circle cx="1481" cy="395" r="3.5"/><circle cx="1390" cy="360" r="3.5" class="pulse"/><circle cx="1327" cy="395" r="4.5"/></g>
 </g>
-<rect x="0.5" y="0.5" width="1529" height="539" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+<rect x="0.5" y="0.5" width="1529" height="439" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
 
 <g class="in" style="animation-delay:.05s">
   <rect x="615" y="58" width="300" height="44" rx="22" fill="#3B82F6" fill-opacity="0.12" stroke="#3B82F6" stroke-opacity="0.5"/>
@@ -33,21 +33,18 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
   <text x="765" y="258" text-anchor="middle" font-size="28" font-weight="600" fill="#F3F4F6">Foco em Front-End e UI/UX</text>
   <text x="765" y="298" text-anchor="middle" font-size="21" fill="#8B94A7">Transformando ideias em experiências digitais.</text>
 </g>
-<g class="in" style="animation-delay:0.45s"><rect x="446.1" y="330" width="195" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
-<g transform="translate(463.1 343) scale(0.9167)"><path fill="#5EB1FF" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></g>
-<text x="494.1" y="361" font-size="18" font-weight="500" fill="#C9D1D9">São Paulo, SP</text></g>
-<g class="in" style="animation-delay:0.53s"><rect x="652.8" y="330" width="254" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
-<g transform="translate(669.8 343) scale(0.9167)"><g fill="#5EB1FF"><path d="M12 3L1 8.5 12 14l9-4.5V16h2V8.5z"/><path d="M5.5 12.2V16c0 1.9 2.9 3.5 6.5 3.5s6.5-1.6 6.5-3.5v-3.8L12 15.5z"/></g></g>
-<text x="700.8" y="361" font-size="18" font-weight="500" fill="#C9D1D9">Pós-graduando em IA</text></g>
-<g class="in" style="animation-delay:0.61s"><rect x="918.9" y="330" width="165" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
-<g transform="translate(935.9 343) scale(0.9167)"><g fill="none" stroke="#5EB1FF" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></g></g>
-<text x="966.9" y="361" font-size="18" font-weight="500" fill="#C9D1D9">Freelancer</text></g>
+<g class="in" style="animation-delay:0.45s"><rect x="347.7" y="330" width="195" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(364.7 343) scale(0.9167)"><path fill="#5EB1FF" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></g>
+<text x="395.7" y="361" font-size="18" font-weight="500" fill="#C9D1D9">São Paulo, SP</text></g>
+<g class="in" style="animation-delay:0.53s"><rect x="554.4" y="330" width="185" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(571.4 343) scale(0.9167)"><g fill="none" stroke="#5EB1FF" stroke-width="2.2" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></g></g>
+<text x="602.4" y="361" font-size="18" font-weight="500" fill="#C9D1D9">ADS · UNICID</text></g>
+<g class="in" style="animation-delay:0.61s"><rect x="751.2" y="330" width="254" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(768.2 343) scale(0.9167)"><g fill="#5EB1FF"><path d="M12 3L1 8.5 12 14l9-4.5V16h2V8.5z"/><path d="M5.5 12.2V16c0 1.9 2.9 3.5 6.5 3.5s6.5-1.6 6.5-3.5v-3.8L12 15.5z"/></g></g>
+<text x="799.2" y="361" font-size="18" font-weight="500" fill="#C9D1D9">Pós-graduando em IA</text></g>
+<g class="in" style="animation-delay:0.69s"><rect x="1017.3" y="330" width="165" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(1034.3 343) scale(0.9167)"><g fill="none" stroke="#5EB1FF" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></g></g>
+<text x="1065.3" y="361" font-size="18" font-weight="500" fill="#C9D1D9">Freelancer</text></g>
 
-<g class="in" style="animation-delay:.7s">
-  <path d="M425 420H1105" stroke="#1F2633" stroke-width="1.5"/>
-  <text x="425" y="476" font-size="18" fill="#8B94A7">Análise e Desenvolvimento de Sistemas · UNICID</text>
-  <rect x="925" y="450" width="180" height="44" rx="22" fill="#FFFFFF"/>
-  <text x="949" y="478" font-size="17" font-weight="700" fill="#0D1117">Ver portfólio</text>
-  <path d="M1072 479l9-9M1072 470h9v9" fill="none" stroke="#0D1117" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
+
 </svg>
