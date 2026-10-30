@@ -12,12 +12,12 @@
 
 ### 🚀 Projetos em destaque
 
-| Projeto | Descrição | Tecnologias |
-|---|---|---|
-| [Pichau Redesign](https://vanderleifernandesds.github.io/pichau-redesign/) | Redesign conceitual de e-commerce, com foco em navegação, hierarquia visual e experiência de compra. | React, JavaScript, Tailwind CSS |
-| [REVOZ](https://github.com/VanderleiFernandesds/ReVoz) | Aplicação experimental para narração de textos, transformação vocal e dublagem. | React, TypeScript, FastAPI |
-| Tech Jobs Map | Mapa para explorar empresas de tecnologia e oportunidades em São Paulo. | React, JavaScript |
-| 2:pontos | Identidade e presença digital para criação de sites e experiências web. | React, Tailwind CSS, UI/UX |
+<p align="center">
+  <a href="https://vanderleifernandesds.github.io/pichau-redesign/"><img width="49%" src="assets/projects/pichau-redesign.svg" alt="Pichau Redesign: redesign conceitual de e-commerce. React, JavaScript, Tailwind CSS." /></a>
+  <a href="https://github.com/VanderleiFernandesds/ReVoz"><img width="49%" src="assets/projects/revoz.svg" alt="REVOZ: narração de textos, transformação vocal e dublagem. React, TypeScript, FastAPI." /></a>
+  <img width="49%" src="assets/projects/tech-jobs-map.svg" alt="Tech Jobs Map: mapa de empresas de tecnologia e oportunidades em São Paulo. React, JavaScript." />
+  <img width="49%" src="assets/projects/2pontos.svg" alt="2:pontos: identidade e presença digital para criação de sites. React, Tailwind CSS, UI/UX." />
+</p>
 
 ### 🧰 Tecnologias e ferramentas
 
