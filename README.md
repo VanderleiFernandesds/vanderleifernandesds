@@ -1,9 +1,5 @@
 <p align="center">
-  <img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer, Front-End e UI/UX" width="100%" />
-</p>
-
-<p align="center">
-  <a href="https://portfolio-vanderlei.vercel.app/"><img width="98%" src="assets/intro.svg" alt="Sobre mim: Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Pós-graduando em Inteligência Artificial. Freelancer de sites e sistemas. Ver portfólio." /></a>
+  <a href="https://portfolio-vanderlei.vercel.app/"><img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. Pós-graduando em IA. Freelancer. Ver portfólio." width="98%" /></a>
 </p>
 
 <p align="center">
