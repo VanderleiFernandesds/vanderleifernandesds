@@ -38,6 +38,10 @@
 <p align="center"><i>Um panorama da minha atividade, consistência e tecnologias utilizadas.</i></p>
 
 <p align="center">
+  <img width="100%" src="assets/github-stats.svg" alt="GitHub stats de Vanderlei Fernandes: contribuições, sequências, commits por hora e linguagens" />
+</p>
+
+<p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=VanderleiFernandesds&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0A0F1F&title_color=5EEAD4&text_color=CBD5E1&icon_color=818CF8&ring_color=5EEAD4" alt="Estatísticas gerais do GitHub de Vanderlei Fernandes" />
   <img height="165" src="https://streak-stats.demolab.com?user=VanderleiFernandesds&hide_border=true&background=0A0F1F&ring=5EEAD4&fire=C084FC&currStreakLabel=5EEAD4&sideLabels=CBD5E1&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=94A3B8" alt="Sequência de contribuições de Vanderlei Fernandes" />
 </p>
