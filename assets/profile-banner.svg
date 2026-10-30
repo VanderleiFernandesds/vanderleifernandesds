@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1530 620" width="1530" height="620" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1530 540" width="1530" height="540" role="img" aria-labelledby="t d">
 <title id="t">Vanderlei Fernandes, Full Stack Developer</title>
 <desc id="d">Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Pós-graduando em IA. Freelancer. Análise e Desenvolvimento de Sistemas, UNICID.</desc>
 <style>
@@ -7,59 +7,47 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .pulse{animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
-.spin{transform-origin:1215px 310px;animation:spin 40s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
   <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.05"/></pattern>
-  <clipPath id="frame"><rect width="1530" height="620" rx="28"/></clipPath>
+  <clipPath id="frame"><rect width="1530" height="540" rx="28"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-  <rect width="1530" height="620" fill="#0D1117"/>
-  <rect width="1530" height="620" fill="url(#dots)"/>
-  <g stroke="#26324A" stroke-width="1.5"><line x1="930" y1="110" x2="1030" y2="175"/><line x1="1030" y1="175" x2="1120" y2="70"/><line x1="1120" y1="70" x2="1250" y2="120"/><line x1="1250" y1="120" x2="1420" y2="80"/><line x1="930" y1="110" x2="960" y2="260"/><line x1="960" y1="260" x2="1070" y2="330"/><line x1="1030" y1="175" x2="1070" y2="330"/><line x1="1070" y1="330" x2="1300" y2="470"/><line x1="1250" y1="120" x2="1400" y2="300"/><line x1="1400" y1="300" x2="1480" y2="400"/><line x1="1480" y1="400" x2="1430" y2="530"/><line x1="1300" y1="470" x2="1430" y2="530"/><line x1="1070" y1="330" x2="1000" y2="450"/><line x1="1000" y1="450" x2="1140" y2="560"/><line x1="1140" y1="560" x2="1300" y2="470"/><line x1="1420" y1="80" x2="1400" y2="300"/></g>
-  <g fill="#3A4A6B"><circle cx="930" cy="110" r="4.5"/><circle cx="1030" cy="175" r="3.5"/><circle cx="1120" cy="70" r="3.5" class="pulse"/><circle cx="1250" cy="120" r="4.5"/><circle cx="1420" cy="80" r="3.5"/><circle cx="960" cy="260" r="3.5"/><circle cx="1070" cy="330" r="4.5" class="pulse"/><circle cx="1400" cy="300" r="3.5"/><circle cx="1480" cy="400" r="3.5"/><circle cx="1300" cy="470" r="4.5"/><circle cx="1000" cy="450" r="3.5" class="pulse"/><circle cx="1140" cy="560" r="3.5"/><circle cx="1430" cy="530" r="4.5"/></g>
+  <rect width="1530" height="540" fill="#0D1117"/>
+  <rect width="1530" height="540" fill="url(#dots)"/>
+  <g stroke="#26324A" stroke-width="1.5"><line x1="42" y1="90" x2="119" y2="150"/><line x1="119" y1="150" x2="77" y2="260"/><line x1="119" y1="150" x2="175" y2="70"/><line x1="175" y1="70" x2="210" y2="210"/><line x1="77" y1="260" x2="210" y2="210"/><line x1="77" y1="260" x2="49" y2="400"/><line x1="49" y1="400" x2="140" y2="360"/><line x1="140" y1="360" x2="203" y2="470"/><line x1="210" y1="210" x2="140" y2="360"/><line x1="1488" y1="90" x2="1411" y2="150"/><line x1="1411" y1="150" x2="1453" y2="260"/><line x1="1411" y1="150" x2="1355" y2="70"/><line x1="1355" y1="70" x2="1320" y2="210"/><line x1="1453" y1="260" x2="1320" y2="210"/><line x1="1453" y1="260" x2="1481" y2="400"/><line x1="1481" y1="400" x2="1390" y2="360"/><line x1="1390" y1="360" x2="1327" y2="470"/><line x1="1320" y1="210" x2="1390" y2="360"/></g>
+  <g fill="#3A4A6B"><circle cx="42" cy="90" r="4.5"/><circle cx="119" cy="150" r="3.5"/><circle cx="77" cy="260" r="3.5" class="pulse"/><circle cx="175" cy="70" r="4.5"/><circle cx="210" cy="210" r="3.5"/><circle cx="49" cy="400" r="3.5"/><circle cx="140" cy="360" r="4.5" class="pulse"/><circle cx="203" cy="470" r="3.5"/><circle cx="1488" cy="90" r="3.5"/><circle cx="1411" cy="150" r="4.5"/><circle cx="1453" cy="260" r="3.5" class="pulse"/><circle cx="1355" cy="70" r="3.5"/><circle cx="1320" cy="210" r="4.5"/><circle cx="1481" cy="400" r="3.5"/><circle cx="1390" cy="360" r="3.5" class="pulse"/><circle cx="1327" cy="470" r="4.5"/></g>
 </g>
-<rect x="0.5" y="0.5" width="1529" height="619" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+<rect x="0.5" y="0.5" width="1529" height="539" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
 
 <g class="in" style="animation-delay:.05s">
-  <rect x="70" y="62" width="300" height="44" rx="22" fill="#3B82F6" fill-opacity="0.12" stroke="#3B82F6" stroke-opacity="0.5"/>
-  <circle cx="96" cy="84" r="5" fill="#5EB1FF" class="pulse"/>
-  <text x="114" y="90.5" font-size="17" font-weight="700" letter-spacing="1.2" fill="#5EB1FF">FULL STACK DEVELOPER</text>
+  <rect x="615" y="58" width="300" height="44" rx="22" fill="#3B82F6" fill-opacity="0.12" stroke="#3B82F6" stroke-opacity="0.5"/>
+  <circle cx="641" cy="80" r="5" fill="#5EB1FF" class="pulse"/>
+  <text x="774" y="86.5" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1.2" fill="#5EB1FF">FULL STACK DEVELOPER</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="66" y="210" font-size="96" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Vanderlei</text>
-  <text x="66" y="306" font-size="96" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Fernandes</text>
+  <text x="765" y="200" text-anchor="middle" font-size="84" font-weight="800" letter-spacing="-2.5" fill="#FFFFFF">Vanderlei Fernandes</text>
 </g>
 <g class="in" style="animation-delay:.3s">
-  <text x="70" y="358" font-size="28" font-weight="600" fill="#F3F4F6">Foco em Front-End e UI/UX</text>
-  <text x="70" y="398" font-size="21" fill="#8B94A7">Transformando ideias em experiências digitais.</text>
+  <text x="765" y="258" text-anchor="middle" font-size="28" font-weight="600" fill="#F3F4F6">Foco em Front-End e UI/UX</text>
+  <text x="765" y="298" text-anchor="middle" font-size="21" fill="#8B94A7">Transformando ideias em experiências digitais.</text>
 </g>
-<g class="in" style="animation-delay:0.45s"><rect x="70" y="430" width="195" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
-<g transform="translate(87 443) scale(0.9167)"><path fill="#5EB1FF" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></g>
-<text x="118" y="461" font-size="18" font-weight="500" fill="#C9D1D9">São Paulo, SP</text></g>
-<g class="in" style="animation-delay:0.53s"><rect x="276.70000000000005" y="430" width="254" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
-<g transform="translate(293.70000000000005 443) scale(0.9167)"><g fill="#5EB1FF"><path d="M12 3L1 8.5 12 14l9-4.5V16h2V8.5z"/><path d="M5.5 12.2V16c0 1.9 2.9 3.5 6.5 3.5s6.5-1.6 6.5-3.5v-3.8L12 15.5z"/></g></g>
-<text x="324.70000000000005" y="461" font-size="18" font-weight="500" fill="#C9D1D9">Pós-graduando em IA</text></g>
-<g class="in" style="animation-delay:0.61s"><rect x="542.8000000000001" y="430" width="165" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
-<g transform="translate(559.8000000000001 443) scale(0.9167)"><g fill="none" stroke="#5EB1FF" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></g></g>
-<text x="590.8000000000001" y="461" font-size="18" font-weight="500" fill="#C9D1D9">Freelancer</text></g>
+<g class="in" style="animation-delay:0.45s"><rect x="446.1" y="330" width="195" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(463.1 343) scale(0.9167)"><path fill="#5EB1FF" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></g>
+<text x="494.1" y="361" font-size="18" font-weight="500" fill="#C9D1D9">São Paulo, SP</text></g>
+<g class="in" style="animation-delay:0.53s"><rect x="652.8" y="330" width="254" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(669.8 343) scale(0.9167)"><g fill="#5EB1FF"><path d="M12 3L1 8.5 12 14l9-4.5V16h2V8.5z"/><path d="M5.5 12.2V16c0 1.9 2.9 3.5 6.5 3.5s6.5-1.6 6.5-3.5v-3.8L12 15.5z"/></g></g>
+<text x="700.8" y="361" font-size="18" font-weight="500" fill="#C9D1D9">Pós-graduando em IA</text></g>
+<g class="in" style="animation-delay:0.61s"><rect x="918.9" y="330" width="165" height="48" rx="24" fill="#161B24" stroke="#1F2633"/>
+<g transform="translate(935.9 343) scale(0.9167)"><g fill="none" stroke="#5EB1FF" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></g></g>
+<text x="966.9" y="361" font-size="18" font-weight="500" fill="#C9D1D9">Freelancer</text></g>
 
 <g class="in" style="animation-delay:.7s">
-  <path d="M70 524H760" stroke="#1F2633" stroke-width="1.5"/>
-  <text x="70" y="566" font-size="18" fill="#8B94A7">Análise e Desenvolvimento de Sistemas · UNICID</text>
-  <rect x="580" y="540" width="180" height="44" rx="22" fill="#FFFFFF"/>
-  <text x="604" y="568" font-size="17" font-weight="700" fill="#0D1117">Ver portfólio</text>
-  <path d="M727 569l9-9M727 560h9v9" fill="none" stroke="#0D1117" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-
-<g class="in" style="animation-delay:.25s">
-  <circle cx="1215" cy="310" r="218" fill="#0D1117"/>
-  <g class="spin"><circle cx="1215" cy="310" r="200" fill="none" stroke="#3B82F6" stroke-width="3" stroke-dasharray="560 70" stroke-linecap="round"/>
-  <circle cx="1356" cy="169" r="11" fill="#5EB1FF" stroke="#0D1117" stroke-width="6"/></g>
-  <circle cx="1215" cy="310" r="176" fill="#121721" stroke="#1F2633" stroke-width="2"/>
-  <text x="1215" y="350" text-anchor="middle" font-size="138" font-weight="800" letter-spacing="-6" fill="#FFFFFF">VF</text>
-  <text x="1215" y="410" text-anchor="middle" font-family="'Fira Code','JetBrains Mono',Consolas,monospace" font-size="24" font-weight="600" fill="#5EB1FF">&lt;/&gt;</text>
+  <path d="M425 420H1105" stroke="#1F2633" stroke-width="1.5"/>
+  <text x="425" y="476" font-size="18" fill="#8B94A7">Análise e Desenvolvimento de Sistemas · UNICID</text>
+  <rect x="925" y="450" width="180" height="44" rx="22" fill="#FFFFFF"/>
+  <text x="949" y="478" font-size="17" font-weight="700" fill="#0D1117">Ver portfólio</text>
+  <path d="M1072 479l9-9M1072 470h9v9" fill="none" stroke="#0D1117" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>

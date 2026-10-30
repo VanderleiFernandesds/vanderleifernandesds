@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const OUT = process.env.OUT || join(dirname(fileURLToPath(import.meta.url)), "..", "assets", "profile-banner.svg");
 
-const W = 1530, H = 620;
+const W = 1530, H = 540;
 const ACCENT = "#3B82F6", ACCENT_L = "#5EB1FF";
 const C_EDGE = "#1F2633", C_TEXT = "#F3F4F6", C_MUTED = "#C9D1D9", C_DIM = "#8B94A7";
 const FONT = `'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif`;
@@ -20,22 +20,22 @@ const ICON = {
 
 const CHIPS = [["pin", "São Paulo, SP"], ["cap", "Pós-graduando em IA"], ["bag", "Freelancer"]];
 
-let chips = "", cx = 70;
+const chipW = CHIPS.map(([, l]) => 66 + l.length * 9.9);
+let chips = "", cx = (W - (chipW.reduce((a, b) => a + b, 0) + 12 * (CHIPS.length - 1))) / 2;
 CHIPS.forEach(([icon, label], i) => {
-  const w = 66 + label.length * 9.9;
-  chips += `<g class="in" style="animation-delay:${(0.45 + i * 0.08).toFixed(2)}s"><rect x="${cx}" y="430" width="${w.toFixed(0)}" height="48" rx="24" fill="#161B24" stroke="${C_EDGE}"/>
-<g transform="translate(${cx + 17} 443) scale(0.9167)">${ICON[icon]}</g>
-<text x="${cx + 48}" y="461" font-size="18" font-weight="500" fill="${C_MUTED}">${label}</text></g>\n`;
+  const w = chipW[i];
+  chips += `<g class="in" style="animation-delay:${(0.45 + i * 0.08).toFixed(2)}s"><rect x="${cx.toFixed(1)}" y="330" width="${w.toFixed(0)}" height="48" rx="24" fill="#161B24" stroke="${C_EDGE}"/>
+<g transform="translate(${(cx + 17).toFixed(1)} 343) scale(0.9167)">${ICON[icon]}</g>
+<text x="${(cx + 48).toFixed(1)}" y="361" font-size="18" font-weight="500" fill="${C_MUTED}">${label}</text></g>\n`;
   cx += w + 12;
 });
 
 // rede decorativa à direita
-const nodes = [[930, 110], [1030, 175], [1120, 70], [1250, 120], [1420, 80], [960, 260], [1070, 330], [1400, 300], [1480, 400], [1300, 470], [1000, 450], [1140, 560], [1430, 530]];
-const edges = [[0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [5, 6], [1, 6], [6, 9], [3, 7], [7, 8], [8, 12], [9, 12], [6, 10], [10, 11], [11, 9], [4, 7]];
+const nodes = [[42, 90], [119, 150], [77, 260], [175, 70], [210, 210], [49, 400], [140, 360], [203, 470], [1488, 90], [1411, 150], [1453, 260], [1355, 70], [1320, 210], [1481, 400], [1390, 360], [1327, 470]];
+const edges = [[0, 1], [1, 2], [1, 3], [3, 4], [2, 4], [2, 5], [5, 6], [6, 7], [4, 6],
+  [8, 9], [9, 10], [9, 11], [11, 12], [10, 12], [10, 13], [13, 14], [14, 15], [12, 14]];
 const net = edges.map(([a, b]) => `<line x1="${nodes[a][0]}" y1="${nodes[a][1]}" x2="${nodes[b][0]}" y2="${nodes[b][1]}"/>`).join("");
 const dots = nodes.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 ? 3.5 : 4.5}"${i % 4 === 2 ? ' class="pulse"' : ""}/>`).join("");
-
-const AX = 1215, AY = 310;
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="t d">
 <title id="t">Vanderlei Fernandes, Full Stack Developer</title>
@@ -46,8 +46,6 @@ text{font-family:${FONT}}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .pulse{animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
-.spin{transform-origin:${AX}px ${AY}px;animation:spin 40s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
@@ -63,34 +61,24 @@ text{font-family:${FONT}}
 <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
 
 <g class="in" style="animation-delay:.05s">
-  <rect x="70" y="62" width="300" height="44" rx="22" fill="${ACCENT}" fill-opacity="0.12" stroke="${ACCENT}" stroke-opacity="0.5"/>
-  <circle cx="96" cy="84" r="5" fill="${ACCENT_L}" class="pulse"/>
-  <text x="114" y="90.5" font-size="17" font-weight="700" letter-spacing="1.2" fill="${ACCENT_L}">FULL STACK DEVELOPER</text>
+  <rect x="${W / 2 - 150}" y="58" width="300" height="44" rx="22" fill="${ACCENT}" fill-opacity="0.12" stroke="${ACCENT}" stroke-opacity="0.5"/>
+  <circle cx="${W / 2 - 124}" cy="80" r="5" fill="${ACCENT_L}" class="pulse"/>
+  <text x="${W / 2 + 9}" y="86.5" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1.2" fill="${ACCENT_L}">FULL STACK DEVELOPER</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="66" y="210" font-size="96" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Vanderlei</text>
-  <text x="66" y="306" font-size="96" font-weight="800" letter-spacing="-3" fill="#FFFFFF">Fernandes</text>
+  <text x="${W / 2}" y="200" text-anchor="middle" font-size="84" font-weight="800" letter-spacing="-2.5" fill="#FFFFFF">Vanderlei Fernandes</text>
 </g>
 <g class="in" style="animation-delay:.3s">
-  <text x="70" y="358" font-size="28" font-weight="600" fill="${C_TEXT}">Foco em Front-End e UI/UX</text>
-  <text x="70" y="398" font-size="21" fill="${C_DIM}">Transformando ideias em experiências digitais.</text>
+  <text x="${W / 2}" y="258" text-anchor="middle" font-size="28" font-weight="600" fill="${C_TEXT}">Foco em Front-End e UI/UX</text>
+  <text x="${W / 2}" y="298" text-anchor="middle" font-size="21" fill="${C_DIM}">Transformando ideias em experiências digitais.</text>
 </g>
 ${chips}
 <g class="in" style="animation-delay:.7s">
-  <path d="M70 524H760" stroke="${C_EDGE}" stroke-width="1.5"/>
-  <text x="70" y="566" font-size="18" fill="${C_DIM}">Análise e Desenvolvimento de Sistemas · UNICID</text>
-  <rect x="580" y="540" width="180" height="44" rx="22" fill="#FFFFFF"/>
-  <text x="604" y="568" font-size="17" font-weight="700" fill="#0D1117">Ver portfólio</text>
-  <path d="M727 569l9-9M727 560h9v9" fill="none" stroke="#0D1117" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-
-<g class="in" style="animation-delay:.25s">
-  <circle cx="${AX}" cy="${AY}" r="218" fill="#0D1117"/>
-  <g class="spin"><circle cx="${AX}" cy="${AY}" r="200" fill="none" stroke="${ACCENT}" stroke-width="3" stroke-dasharray="560 70" stroke-linecap="round"/>
-  <circle cx="${AX + 141}" cy="${AY - 141}" r="11" fill="${ACCENT_L}" stroke="#0D1117" stroke-width="6"/></g>
-  <circle cx="${AX}" cy="${AY}" r="176" fill="#121721" stroke="${C_EDGE}" stroke-width="2"/>
-  <text x="${AX}" y="${AY + 40}" text-anchor="middle" font-size="138" font-weight="800" letter-spacing="-6" fill="#FFFFFF">VF</text>
-  <text x="${AX}" y="${AY + 100}" text-anchor="middle" font-family="'Fira Code','JetBrains Mono',Consolas,monospace" font-size="24" font-weight="600" fill="${ACCENT_L}">&lt;/&gt;</text>
+  <path d="M${W / 2 - 340} 420H${W / 2 + 340}" stroke="${C_EDGE}" stroke-width="1.5"/>
+  <text x="${W / 2 - 340}" y="476" font-size="18" fill="${C_DIM}">Análise e Desenvolvimento de Sistemas · UNICID</text>
+  <rect x="${W / 2 + 160}" y="450" width="180" height="44" rx="22" fill="#FFFFFF"/>
+  <text x="${W / 2 + 184}" y="478" font-size="17" font-weight="700" fill="#0D1117">Ver portfólio</text>
+  <path d="M${W / 2 + 307} 479l9-9M${W / 2 + 307} 470h9v9" fill="none" stroke="#0D1117" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>
 `;
