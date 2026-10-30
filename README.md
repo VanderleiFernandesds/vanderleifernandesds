@@ -1,137 +1,56 @@
 <p align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:0369a1&height=200&section=header&text=Vanderlei%20Fernandes&fontSize=36&fontColor=ffffff&animation=fadeIn&desc=Desenvolvedor%20Full%20Stack&descSize=18&descAlignY=72"
-    alt="Vanderlei Fernandes — Desenvolvedor Full Stack"
-    width="100%"
-  />
+  <img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer, Front-End e UI/UX" width="100%" />
+</p>
+
+<h2 align="center">Olá! Eu sou Vanderlei Fernandes 👋</h2>
+
+<p align="center">
+  Desenvolvedor Full Stack com foco em Front-End e UI/UX. Sou formado em Análise e Desenvolvimento de Sistemas e gosto de transformar ideias em interfaces intuitivas, funcionais e visualmente consistentes.
 </p>
 
 <p align="center">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=19&pause=1500&color=0EA5E9&center=true&vCenter=true&width=600&height=45&lines=Full+Stack+com+foco+em+Front-End+e+UI%2FUX;Do+design+%C3%A0+implementa%C3%A7%C3%A3o;Interfaces+criativas+e+experi%C3%AAncias+intuitivas"
-    alt="Full Stack com foco em Front-End e UI/UX"
-  />
-</p>
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/vanderleifernandesds">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:vanderleifds.7000@hotmail.com">
-    <img src="https://img.shields.io/badge/E--mail-334155?style=for-the-badge&logo=gmail&logoColor=white" alt="E-mail" />
-  </a>
+  <a href="https://portfolio-vanderlei.vercel.app/">Portfólio</a> ·
+  <a href="https://github.com/VanderleiFernandesds">GitHub</a>
 </p>
 
 ---
 
-### 👨‍💻 Sobre mim
+### 🚀 Projetos em destaque
 
-Sou **Vanderlei Fernandes**, formado em **Análise e Desenvolvimento de Sistemas** e desenvolvedor **Full Stack com foco em Front-End e UI/UX**.
+| Projeto | Descrição | Tecnologias |
+|---|---|---|
+| [Pichau Redesign](https://vanderleifernandesds.github.io/pichau-redesign/) | Redesign conceitual de e-commerce, com foco em navegação, hierarquia visual e experiência de compra. | React, JavaScript, Tailwind CSS |
+| [REVOZ](https://github.com/VanderleiFernandesds/ReVoz) | Aplicação experimental para narração de textos, transformação vocal e dublagem. | React, TypeScript, FastAPI |
+| Tech Jobs Map | Projeto de mapa para explorar empresas de tecnologia e oportunidades em São Paulo. | React, JavaScript |
+| 2:pontos | Projeto de identidade e presença digital para criação de sites e experiências web. | React, Tailwind CSS, UI/UX |
 
-Gosto de transformar ideias em aplicações web que combinam identidade visual, navegação intuitiva e funcionalidade. Meu interesse vai do planejamento da interface à integração com APIs e banco de dados.
+### 🧰 Tecnologias e ferramentas
 
-- 🎨 Foco em interfaces, responsividade e experiência do usuário.
-- ⚛️ Desenvolvimento com JavaScript, React e Tailwind CSS.
-- 🛠️ Aprimorando meus conhecimentos em Node.js e MySQL.
-- 💼 Em busca de oportunidades para contribuir e crescer em equipe.
-
----
-
-### 🚀 Tecnologias e ferramentas
-
-<p align="center">
-  <strong>Front-End</strong>
-</p>
-
-<p align="center">
-  <img
-    src="https://skillicons.dev/icons?i=html,css,js,react,tailwind&theme=dark"
-    alt="HTML, CSS, JavaScript, React e Tailwind CSS"
-  />
-</p>
-
-<p align="center">
-  <strong>Back-End e banco de dados · aprofundando conhecimentos</strong>
-</p>
-
-<p align="center">
-  <img
-    src="https://skillicons.dev/icons?i=nodejs,mysql&theme=dark"
-    alt="Node.js e MySQL"
-  />
-</p>
-
-<p align="center">
-  <strong>Design e ferramentas</strong>
-</p>
-
-<p align="center">
-  <img
-    src="https://skillicons.dev/icons?i=figma,git,github,vscode&theme=dark"
-    alt="Figma,Git, GitHub e Visual Studio Code"
-  />
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vite,tailwind,nextjs,nodejs,python,fastapi,figma,git,github&perline=7" alt="Tecnologias e ferramentas" />
 </p>
 
 ---
 
-### 🖥️ Projeto em destaque
+<!-- GITHUB STATS: Vanderlei Fernandes -->
+### 📊 GitHub Analytics
 
-#### Pichau — Conceito de redesign
+<p align="center"><i>Um panorama da minha atividade, consistência e tecnologias utilizadas.</i></p>
 
-Uma proposta independente de redesign para um e-commerce de tecnologia, desenvolvida para explorar **UI/UX, responsividade e performance**.
-
-🛍️ Busca, filtros, favoritos e carrinho.  
-🎨 Temas claro e escuro.  
-📱 Navegação adaptada para desktop e dispositivos móveis.  
-⚡ Otimizações no carregamento de imagens e fontes.  
-🧩 Componentes desenvolvidos com React e Tailwind CSS.
-
-<p>
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-0F172A?style=flat-square&logo=tailwindcss&logoColor=38BDF8" alt="Tailwind CSS" />
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=VanderleiFernandesds&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0A0F1F&title_color=5EEAD4&text_color=CBD5E1&icon_color=818CF8&ring_color=5EEAD4" alt="Estatísticas gerais do GitHub de Vanderlei Fernandes" />
+  <img height="165" src="https://streak-stats.demolab.com?user=VanderleiFernandesds&hide_border=true&background=0A0F1F&ring=5EEAD4&fire=C084FC&currStreakLabel=5EEAD4&sideLabels=CBD5E1&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=94A3B8" alt="Sequência de contribuições de Vanderlei Fernandes" />
 </p>
 
-<p>
-  <a href="https://vanderleifernandesds.github.io/pichau-redesign/">
-    <img src="https://img.shields.io/badge/Ver_projeto-0284C7?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Ver projeto" />
-  </a>
-  <a href="https://github.com/vanderleifernandesds/pichau-redesign">
-    <img src="https://img.shields.io/badge/Ver_código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Ver código" />
-  </a>
+<p align="center">
+  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VanderleiFernandesds&layout=compact&langs_count=8&hide_border=true&bg_color=0A0F1F&title_color=5EEAD4&text_color=CBD5E1" alt="Linguagens mais utilizadas nos repositórios de Vanderlei Fernandes" />
 </p>
 
-> Projeto de estudo, sem vínculo comercial com a Pichau. O checkout é demonstrativo.
+<p align="center">
+  <img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=VanderleiFernandesds&bg_color=0A0F1F&color=CBD5E1&line=5EEAD4&point=C084FC&area=true&hide_border=true" alt="Gráfico de atividade do GitHub de Vanderlei Fernandes" />
+</p>
+<!-- END GITHUB STATS -->
 
 ---
 
-### 📊 Atividade no GitHub
-
-<details>
-  <summary><strong>Clique para visualizar minhas estatísticas</strong></summary>
-
-  <br />
-
-  <p align="center">
-    <img
-      src="https://github-readme-stats.vercel.app/api?username=vanderleifernandesds&show_icons=true&hide_border=true&bg_color=0d1117&title_color=0ea5e9&icon_color=0ea5e9&text_color=c9d1d9&locale=pt-br"
-      alt="Estatísticas do GitHub de Vanderlei Fernandes"
-      width="49%"
-    />
-    <img
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=vanderleifernandesds&layout=compact&hide_border=true&bg_color=0d1117&title_color=0ea5e9&text_color=c9d1d9&custom_title=Linguagens&langs_count=6"
-      alt="Linguagens mais utilizadas nos repositórios"
-      width="44%"
-    />
-  </p>
-
-</details>
-
----
-
-
-<img
-  src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:0369a1&height=110&section=footer"
-  alt=""
-  width="100%"
-/>
+<p align="center">💡 Sempre aprendendo, construindo e aprimorando experiências digitais.</p>
