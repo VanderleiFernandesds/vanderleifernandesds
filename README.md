@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer, Front-End e UI/UX" width="100%" />
+  <img src="assets/profile-banner.svg" alt="Vanderlei Fernandes — Full Stack Developer, Front-End e UI/UX" width="100%" />
 </p>
 
 <h2 align="center">Olá! Eu sou Vanderlei Fernandes 👋</h2>
