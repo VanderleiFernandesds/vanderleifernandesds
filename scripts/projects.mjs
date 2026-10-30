@@ -145,7 +145,7 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
 <g class="in" transform="translate(20 10)">
 <rect x="20" y="22" width="86" height="84" rx="18" fill="url(#ib)"/>
 <g transform="translate(39 40) scale(2)">${rocket}</g>
-<text x="134" y="68" font-size="46" font-weight="800" fill="#FFFFFF" letter-spacing="-0.6">Projetos em <tspan fill="#8B5CF6">destaque</tspan></text>
+<text x="134" y="68" font-size="46" font-weight="800" fill="#FFFFFF" letter-spacing="-0.6">Projetos em destaque</text>
 <text x="136" y="102" font-size="20" fill="#A3ACBD">Interfaces, produtos e experimentos que construí do design ao código</text>
 <g transform="translate(1470 64)" text-anchor="end">
 <text font-size="56" font-weight="800" fill="#FFFFFF" fill-opacity="0.08" y="18">0${PROJECTS.length}</text>
