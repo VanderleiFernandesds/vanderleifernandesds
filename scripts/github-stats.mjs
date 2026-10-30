@@ -175,11 +175,13 @@ function groupLang(items) {
 
 // ---------- SVG ----------
 
+const W = 1530, H = 1028;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const DUR = 14.0;
+const DUR = 4.0; // animação de entrada, roda uma vez
 let kfIndex = 0;
 const keyframes = [];
 const pct = (sec) => ((sec / DUR) * 100).toFixed(3) + "%";
+const anim = (name) => `animation:${name} ${DUR}s both`;
 
 function kf(body) {
   const name = `k${++kfIndex}`;
@@ -187,58 +189,109 @@ function kf(body) {
   return name;
 }
 
+const LANG_COLORS = {
+  JavaScript: "#FACC15",
+  TypeScript: "#1E8BFF",
+  CSS: "#7C3AED",
+  HTML: "#F4511E",
+  Python: "#3B82F6",
+  Java: "#F59E0B",
+  PHP: "#8B5CF6",
+  SCSS: "#EC4899",
+  Shell: "#22C55E",
+  Vue: "#10B981",
+  Outras: "#64748B",
+};
+const langColor = (it) => LANG_COLORS[it.name] || it.color || "#94A3B8";
+
+const C_BG = "#0D1117";
+const C_TILE = "#121721";
+const C_EDGE = "#1F2633";
+const C_TEXT = "#F3F4F6";
+const C_MUTED = "#C9D1D9";
+const C_DIM = "#8B94A7";
+
+const ICONS = {
+  github: `<path transform="translate(77 64) scale(2.9)" fill="#FFFFFF" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>`,
+  users: `<g fill="#FFFFFF"><circle cx="12" cy="7.6" r="3.3"/><path d="M5.6 18.5c0-3.4 2.9-5.7 6.4-5.7s6.4 2.3 6.4 5.7z"/><circle cx="5.2" cy="9.4" r="2.3"/><circle cx="18.8" cy="9.4" r="2.3"/><path d="M.8 17.2c0-2.4 1.8-4 4.2-4 .8 0 1.5.2 2.1.5-1.3 1-2.1 2.2-2.4 3.5z"/><path d="M23.2 17.2c0-2.4-1.8-4-4.2-4-.8 0-1.5.2-2.1.5 1.3 1 2.1 2.2 2.4 3.5z"/></g>`,
+  calendar: (c) => `<g fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></g><g fill="${c}"><rect x="7" y="13" width="3" height="3" rx=".6"/><rect x="14" y="13" width="3" height="3" rx=".6"/></g>`,
+  fire: (bg) => `<path fill="#FFFFFF" d="M12 22.5c-4.4 0-7.2-3-7.2-6.8 0-3.6 2.4-5.8 4-8.4.5 1.5 1.3 2.6 2.4 3.2C11.7 6.7 12.7 4 15.1 2c-.2 3 1.2 5 2.5 6.8 1.1 1.6 1.6 3.4 1.6 6.6 0 4-2.9 7.1-7.2 7.1z"/><path fill="${bg}" d="M12 20.4c-1.8 0-3-1.2-3-2.8 0-1.7 1.3-2.8 2.2-4.2.3.9.9 1.5 1.6 1.7.4-1 .7-2.1.5-3.2 1.4 1.2 2.7 2.9 2.7 5.3 0 1.8-1.5 3.2-4 3.2z"/>`,
+  bars: `<g fill="#FFFFFF"><rect x="4" y="11" width="4" height="9" rx="1"/><rect x="10" y="5" width="4" height="15" rx="1"/><rect x="16" y="9" width="4" height="11" rx="1"/></g>`,
+  code: `<path fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/>`,
+  layers: `<g fill="#FFFFFF"><path d="M12 2.5l9 4.2-9 4.2-9-4.2z"/><path d="M3 11.2l2.4-1.1L12 13.2l6.6-3.1 2.4 1.1-9 4.2z"/><path d="M3 15.7l2.4-1.1L12 17.7l6.6-3.1 2.4 1.1-9 4.2z"/></g>`,
+};
+
+function iconBox({ x, y, w, h, rx, fill, icon, size = 24 }) {
+  const s = (Math.min(w, h) * 0.56) / 24;
+  const tx = x + w / 2 - 12 * s, ty = y + h / 2 - 12 * s;
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}"/><g transform="translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${s.toFixed(3)})">${icon}</g>\n`;
+}
+
+// Card com cor de destaque (brilho no canto e barra inferior)
+function accentTile({ x, y, w, h, color, id }) {
+  return `<linearGradient id="tint${id}" x1="0" y1="1" x2="0.6" y2="0"><stop offset="0" stop-color="${color}" stop-opacity="0.22"/><stop offset="0.55" stop-color="${color}" stop-opacity="0.04"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient>
+<linearGradient id="edge${id}" x1="0" y1="1" x2="0.5" y2="0"><stop offset="0" stop-color="${color}" stop-opacity="0.9"/><stop offset="0.35" stop-color="${color}" stop-opacity="0.15"/><stop offset="1" stop-color="${C_EDGE}"/></linearGradient>
+<clipPath id="clip${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18"/></clipPath>
+<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18" fill="${C_TILE}"/>
+<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18" fill="url(#tint${id})"/>
+<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18" fill="none" stroke="url(#edge${id})" stroke-width="1.5"/>
+<rect x="${x}" y="${y + h - 5}" width="70" height="5" fill="${color}" clip-path="url(#clip${id})"/>\n`;
+}
+
+function plainTile({ x, y, w, h }) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18" fill="${C_TILE}" stroke="${C_EDGE}" stroke-width="1.5"/>\n`;
+}
+
 // Contador estilo odômetro
-function odometer({ value, x, baseline, size, colW, delay, anchor = "start", id }) {
+function odometer({ value, x, baseline, size, colW, delay, id, fill = "#FFFFFF" }) {
   const digits = String(value).split("").map(Number);
   const step = +(size * 1.4).toFixed(1);
   const width = digits.length * colW;
-  const left = anchor === "start" ? x : x - width;
   const clipId = `c${id}`;
-  let out = `<clipPath id="${clipId}"><rect x="${left - 4}" y="${(baseline - size * 0.86).toFixed(1)}" width="${width + 8}" height="${(size * 1.12).toFixed(1)}"/></clipPath>\n<g clip-path="url(#${clipId})">\n`;
+  let out = `<clipPath id="${clipId}"><rect x="${x - 4}" y="${(baseline - size * 0.86).toFixed(1)}" width="${width + 8}" height="${(size * 1.12).toFixed(1)}"/></clipPath>\n<g clip-path="url(#${clipId})">\n`;
   digits.forEach((d, i) => {
-    const cx = left + colW * i + colW / 2;
+    const cx = x + colW * i + colW / 2;
     const final = -(10 + d) * step;
-    const s = delay + i * 0.12;
-    const name = kf(`0%,${pct(0.5 + s)}{transform:translateY(0px);animation-timing-function:cubic-bezier(.2,.8,.2,1)}${pct(2.2 + s)},100%{transform:translateY(${final.toFixed(1)}px)}`);
-    out += `<g style="animation:${name} ${DUR}s infinite;transform:translateY(${final.toFixed(1)}px)">\n`;
+    const s = delay + i * 0.1;
+    const name = kf(`0%,${pct(0.2 + s)}{transform:translateY(0px);animation-timing-function:cubic-bezier(.2,.8,.2,1)}${pct(1.6 + s)},100%{transform:translateY(${final.toFixed(1)}px)}`);
+    out += `<g style="${anim(name)};transform:translateY(${final.toFixed(1)}px)">`;
     for (let n = 0; n < 20; n++)
-      out += `<text x="${cx.toFixed(1)}" y="${(baseline + n * step).toFixed(1)}" text-anchor="middle" font-size="${size}" font-weight="800" fill="url(#numfill)">${n % 10}</text>\n`;
+      out += `<text x="${cx.toFixed(1)}" y="${(baseline + n * step).toFixed(1)}" text-anchor="middle" font-size="${size}" font-weight="800" fill="${fill}">${n % 10}</text>`;
     out += `</g>\n`;
   });
   out += `</g>\n`;
   return { svg: out, width };
 }
 
-function donut({ cx, cy, items, delay, legendX, legendY, title, tileX }) {
-  const r = 68, C = 2 * Math.PI * r, gap = 3;
-  let s = `<rect x="${tileX}" y="526" width="550" height="250" rx="20" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>\n`;
-  s += `<text x="${tileX + 28}" y="566" font-size="17" font-weight="700" fill="#E8ECF8">${esc(title)}</text>\n`;
+function langTile({ x, w, title, icon, iconFill, items, delay, nameX, pctX, cx }) {
+  const y = 693, h = 290, cy = 845, r = 87, sw = 38;
+  const C = 2 * Math.PI * r;
+  let s = plainTile({ x, y, w, h });
+  s += iconBox({ x: x + 28, y: y + 19, w: 49, h: 48, rx: 11, fill: iconFill, icon });
+  s += `<text x="${x + 101}" y="${y + 51}" font-size="23" font-weight="700" fill="${C_TEXT}">${esc(title)}</text>\n`;
   if (!items.length) {
-    s += `<text x="${tileX + 275}" y="660" text-anchor="middle" font-size="14" fill="#8B94B3">Sem dados ainda</text>\n`;
+    s += `<text x="${x + w / 2}" y="${cy}" text-anchor="middle" font-size="17" fill="${C_DIM}">Sem dados ainda</text>\n`;
     return s;
   }
   items.forEach((it, i) => {
-    const y = legendY + i * 31;
-    s += `<circle cx="${legendX}" cy="${y}" r="5" fill="${it.color}"/>\n`;
-    s += `<text x="${legendX + 18}" y="${y + 5}" font-size="14" fill="#E8ECF8">${esc(it.name)}</text>\n`;
-    s += `<text x="${legendX + 228}" y="${y + 5}" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">${it.pct}%</text>\n`;
+    const ly = 801 + i * 45;
+    s += `<circle cx="${nameX - 31}" cy="${ly}" r="12" fill="${langColor(it)}"/>\n`;
+    s += `<text x="${nameX}" y="${ly + 7}" font-size="19" font-weight="500" fill="${C_TEXT}">${esc(it.name)}</text>\n`;
+    s += `<text x="${pctX}" y="${ly + 7}" text-anchor="end" font-size="19" font-weight="500" fill="${C_TEXT}">${it.pct}%</text>\n`;
   });
-  s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="26"/>\n`;
-  let acc = 0;
-  let t = delay;
-  const total = 0.06 * DUR * 0.6; // duração total do preenchimento
+  s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="${sw}"/>\n`;
+  let acc = 0, t = delay;
   items.forEach((it) => {
-    const len = Math.max(it.frac * C - (items.length > 1 ? gap : 0), 0.8);
-    const off = -(acc + (items.length > 1 ? gap / 2 : 0));
-    const dur = Math.max(it.frac * total * 2, 0.12);
+    const len = Math.max(it.frac * C, 0.8);
+    const dur = Math.max(it.frac * 1.2, 0.1);
     const name = kf(`0%,${pct(t)}{stroke-dasharray:0 ${C.toFixed(2)};animation-timing-function:linear}${pct(t + dur)},100%{stroke-dasharray:${len.toFixed(2)} ${C.toFixed(2)}}`);
-    s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${it.color}" stroke-width="26" stroke-dasharray="${len.toFixed(2)} ${C.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" transform="rotate(-90 ${cx} ${cy})" style="animation:${name} ${DUR}s infinite"/>\n`;
+    s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${langColor(it)}" stroke-width="${sw}" stroke-dasharray="${len.toFixed(2)} ${C.toFixed(2)}" stroke-dashoffset="${(-acc).toFixed(2)}" transform="rotate(-90 ${cx} ${cy})" style="${anim(name)}"/>\n`;
     acc += it.frac * C;
     t += dur;
   });
-  const fade = kf(`0%,${pct(t)}{opacity:0;animation-timing-function:ease}${pct(t + 0.5)},100%{opacity:1}`);
   const top = items[0];
-  s += `<g style="animation:${fade} ${DUR}s infinite"><text x="${cx}" y="${cy + 4}" text-anchor="middle" font-size="24" font-weight="800" fill="url(#numfill)">${top.pct}%</text><text x="${cx}" y="${cy + 22}" text-anchor="middle" font-size="12" fill="#8B94B3">${esc(top.name)}</text></g>\n`;
+  s += `<text x="${cx}" y="${cy + 6}" text-anchor="middle" font-size="38" font-weight="800" fill="#FFFFFF">${top.pct}%</text>\n`;
+  s += `<text x="${cx}" y="${cy + 30}" text-anchor="middle" font-size="17" font-weight="500" fill="${C_TEXT}">${esc(top.name)}</text>\n`;
   return s;
 }
 
@@ -251,127 +304,115 @@ function build(data) {
   const hours = Array(24).fill(0);
   for (const c of commits) hours[hourOf(c.date)]++;
 
-  const byRepo = topShares(groupLang(repos.map((r) => r.primaryLanguage)));
-  const byCommit = topShares(groupLang(commits.map((c) => c.lang)));
+  const byRepo = topShares(groupLang(repos.map((r) => r.primaryLanguage)), 4);
+  const byCommit = topShares(groupLang(commits.map((c) => c.lang)), 4);
 
-  let body = "";
-  body += `<text x="40" y="54" font-size="27" font-weight="800" fill="#E8ECF8" letter-spacing="-0.4">GitHub stats</text>\n`;
-  body += `<text x="40" y="78" font-size="14" fill="#8B94B3">${esc(DISPLAY_NAME)}, ${esc(ROLE)}</text>\n`;
+  const PURPLE = "#8B5CF6", BLUE = "#1D8CF8", GREEN = "#10B981";
+  let b = "";
 
-  // Tile 1: total
-  body += `<rect x="40" y="96" width="300" height="190" rx="20" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>\n`;
-  body += `<text x="68" y="138" font-size="15" font-weight="600" fill="#8B94B3">Total de contribuições</text>\n`;
-  const sizeTotal = String(total).length > 4 ? 58 : 72;
-  body += odometer({ value: total, x: 68, baseline: 218, size: sizeTotal, colW: sizeTotal * 0.625, delay: 0, id: "total" }).svg;
-  body += `<text x="68" y="260" font-size="13" font-weight="600" fill="#5EEAD4">${fmtDay(sinceIso, true)} até hoje</text>\n`;
+  // Cabeçalho
+  b += `<rect x="55" y="43" width="90" height="87" rx="18" fill="#161B24" stroke="${C_EDGE}"/>\n${ICONS.github}\n`;
+  b += `<text x="175" y="89" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">GitHub <tspan fill="url(#titleGrad)">stats</tspan></text>\n`;
+  b += `<text x="176" y="125" font-size="21" fill="#A3ACBD">${esc(DISPLAY_NAME)}, ${esc(ROLE)}</text>\n`;
+  const upd = `Atualizado em ${fmtDay(todayLocal(), true)}`;
+  const pillW = 82 + upd.length * 8.6;
+  b += `<rect x="${1480 - pillW}" y="43" width="${pillW.toFixed(0)}" height="55" rx="27.5" fill="#161B24" stroke="${C_EDGE}"/>\n`;
+  b += `<circle cx="${(1480 - pillW + 32).toFixed(0)}" cy="71" r="8" fill="#22C55E"/>\n`;
+  b += `<text x="${(1480 - pillW + 52).toFixed(0)}" y="77" font-size="16" font-weight="500" fill="${C_MUTED}">${upd}</text>\n`;
 
-  // Tile 2: sequência atual
-  const C = 2 * Math.PI * 62;
+  // Card 1: total
+  b += accentTile({ x: 55, y: 163, w: 477, h: 225, color: PURPLE, id: 1 });
+  b += iconBox({ x: 84, y: 185, w: 60, h: 58, rx: 12, fill: "url(#gPurple)", icon: ICONS.users });
+  b += `<text x="185" y="213" font-size="19" font-weight="600" fill="${C_TEXT}">Total de contribuições</text>\n`;
+  const tSize = String(total).length > 4 ? 56 : 68;
+  b += odometer({ value: total, x: 185, baseline: 300, size: tSize, colW: tSize * 0.6, delay: 0, id: "total" }).svg;
+  b += `<g transform="translate(185 329) scale(0.85)">${ICONS.calendar("#A78BFA")}</g>\n`;
+  b += `<text x="214" y="346" font-size="18" fill="${C_MUTED}">${fmtDay(sinceIso, true)} até hoje</text>\n`;
+
+  // Card 2: sequência atual
+  b += accentTile({ x: 560, y: 163, w: 482, h: 225, color: BLUE, id: 2 });
+  b += iconBox({ x: 586, y: 185, w: 58, h: 58, rx: 12, fill: "url(#gBlue)", icon: ICONS.calendar("#FFFFFF") });
+  b += `<text x="680" y="213" font-size="19" font-weight="600" fill="${C_TEXT}">Sequência atual</text>\n`;
+  const R = 62, RC = 2 * Math.PI * R;
   const ratio = longest.len ? current.len / longest.len : 0;
-  const ringOff = (C * (1 - ratio)).toFixed(2);
-  const ringKf = kf(`0%,${pct(0.65)}{stroke-dashoffset:${C.toFixed(2)};animation-timing-function:cubic-bezier(.2,.8,.2,1)}${pct(2.35)},100%{stroke-dashoffset:${ringOff}}`);
-  body += `<rect x="360" y="96" width="480" height="190" rx="20" fill="#FFFFFF" fill-opacity="0.04" stroke="url(#tileEdge)" stroke-opacity="1" stroke-width="1.4"/>\n`;
-  body += `<circle cx="472" cy="191" r="62" fill="none" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="10"/>\n`;
-  body += `<circle cx="472" cy="191" r="62" fill="none" stroke="url(#ring)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${C.toFixed(2)}" stroke-dashoffset="${ringOff}" transform="rotate(-90 472 191)" filter="url(#glow)" style="animation:${ringKf} ${DUR}s infinite"/>\n`;
-  if (current.len > 0) {
-    const dotKf = kf(`0%,${pct(2.4)}{opacity:0;animation-timing-function:ease}${pct(2.8)},100%{opacity:1}`);
-    body += `<circle class="dot" r="3.5" fill="#FFFFFF" style="animation:${dotKf} ${DUR}s infinite;opacity:1"><animateMotion dur="6s" repeatCount="indefinite" path="M 472,129 A 62,62 0 1,1 471.99,129"/></circle>\n`;
-  }
-  const curStr = String(current.len);
-  const curSize = curStr.length > 3 ? 36 : 46;
-  const curW = curStr.length * curSize * 0.63;
-  body += odometer({ value: current.len, x: 472 - curW / 2, baseline: 207, size: curSize, colW: curSize * 0.63, delay: 0.15, id: "cur" }).svg;
-  body += `<text x="472" y="229" text-anchor="middle" font-size="12" font-weight="600" fill="#8B94B3">dias</text>\n`;
-  body += `<text x="574" y="174" font-size="19" font-weight="700" fill="#E8ECF8">Sequência atual</text>\n`;
-  body += `<text x="574" y="200" font-size="14" fill="#5EEAD4" font-weight="600">${current.len ? `${fmtDay(current.start)} a ${fmtDay(current.end)}` : "Nenhuma sequência ativa"}</text>\n`;
+  const off = (RC * (1 - ratio)).toFixed(2);
+  const ringKf = kf(`0%,${pct(0.3)}{stroke-dashoffset:${RC.toFixed(2)};animation-timing-function:cubic-bezier(.2,.8,.2,1)}${pct(1.9)},100%{stroke-dashoffset:${off}}`);
+  b += `<circle cx="734" cy="303" r="${R}" fill="none" stroke="#1D3557" stroke-width="14"/>\n`;
+  b += `<circle cx="734" cy="303" r="${R}" fill="none" stroke="${BLUE}" stroke-width="14" stroke-linecap="${ratio >= 1 ? "butt" : "round"}" stroke-dasharray="${RC.toFixed(2)}" stroke-dashoffset="${off}" transform="rotate(-90 734 303)" style="${anim(ringKf)}"/>\n`;
+  const cStr = String(current.len), cSize = cStr.length > 3 ? 34 : 44, cW = cSize * 0.6;
+  b += odometer({ value: current.len, x: 734 - (cStr.length * cW) / 2, baseline: 310, size: cSize, colW: cW, delay: 0.1, id: "cur" }).svg;
+  b += `<text x="734" y="332" text-anchor="middle" font-size="15" fill="${C_MUTED}">dias</text>\n`;
+  b += `<text x="828" y="294" font-size="19" font-weight="600" fill="#3B9EFF">${current.len ? `${fmtDay(current.start)} a ${fmtDay(current.end)}` : "Nenhuma sequência ativa"}</text>\n`;
   const note = current.len && current.len === longest.len ? "Igual à maior sequência" : `Maior sequência: ${longest.len} dias`;
-  body += `<text x="574" y="228" font-size="13" fill="#8B94B3">${note}</text>\n`;
+  b += `<text x="828" y="332" font-size="17" fill="${C_MUTED}">${note}</text>\n`;
 
-  // Tile 3: maior sequência
-  body += `<rect x="860" y="96" width="300" height="190" rx="20" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>\n`;
-  body += `<text x="888" y="138" font-size="15" font-weight="600" fill="#8B94B3">Maior sequência</text>\n`;
-  const lg = odometer({ value: longest.len, x: 888, baseline: 218, size: 72, colW: 45, delay: 0.3, id: "long" });
-  body += lg.svg;
-  body += `<text x="${888 + lg.width + 10}" y="218" font-size="20" font-weight="600" fill="#8B94B3">dias</text>\n`;
-  body += `<text x="888" y="260" font-size="13" font-weight="600" fill="#5EEAD4">${longest.len ? `${fmtDay(longest.start, true)} a ${fmtDay(longest.end, true)}` : "Sem dados ainda"}</text>\n`;
+  // Card 3: maior sequência
+  b += accentTile({ x: 1070, y: 163, w: 410, h: 225, color: GREEN, id: 3 });
+  b += iconBox({ x: 1096, y: 185, w: 58, h: 58, rx: 12, fill: "url(#gGreen)", icon: ICONS.fire("#12A673") });
+  b += `<text x="1195" y="213" font-size="19" font-weight="600" fill="${C_TEXT}">Maior sequência</text>\n`;
+  const lg = odometer({ value: longest.len, x: 1195, baseline: 300, size: 68, colW: 41, delay: 0.2, id: "long" });
+  b += lg.svg;
+  b += `<text x="${1195 + lg.width + 14}" y="300" font-size="26" font-weight="500" fill="${C_DIM}">dias</text>\n`;
+  b += `<text x="1196" y="345" font-size="18" fill="${C_MUTED}">${longest.len ? `${fmtDay(longest.start, true)} a ${fmtDay(longest.end, true)}` : "Sem dados ainda"}</text>\n`;
 
   // Commits por hora
-  body += `<rect x="40" y="306" width="1120" height="200" rx="20" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>\n`;
-  body += `<text x="68" y="344" font-size="17" font-weight="700" fill="#E8ECF8">Commits por hora</text>\n`;
-  body += `<text x="1132" y="344" text-anchor="end" font-size="13" fill="#8B94B3">${esc(TZ_LABEL)}</text>\n`;
+  b += plainTile({ x: 55, y: 417, w: 1425, h: 250 });
+  b += iconBox({ x: 83, y: 440, w: 49, h: 48, rx: 10, fill: "#3B2380", icon: ICONS.bars });
+  b += `<text x="156" y="471" font-size="23" font-weight="700" fill="${C_TEXT}">Commits por hora</text>\n`;
+  b += `<rect x="1293" y="442" width="165" height="44" rx="22" fill="#161B24" stroke="${C_EDGE}"/>\n`;
+  b += `<text x="1375.5" y="469" text-anchor="middle" font-size="15" fill="${C_MUTED}">${esc(TZ_LABEL)}</text>\n`;
   const maxH = Math.max(...hours, 1);
-  const stepRaw = maxH / 3;
-  const mag = 10 ** Math.floor(Math.log10(stepRaw));
-  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((v) => v >= stepRaw);
-  const yMax = step * 3;
-  const y0 = 472, chartH = 78;
+  const raw = maxH / 3;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const step = Math.max(1, [1, 2, 2.5, 5, 10].map((m) => m * mag).find((v) => v >= raw));
+  const yMax = step * 3, y0 = 627, chartH = 110;
   for (let g = 0; g <= 3; g++) {
     const y = y0 - (chartH * g) / 3;
-    body += `<line x1="100" y1="${y.toFixed(1)}" x2="1132" y2="${y.toFixed(1)}" stroke="#FFFFFF" stroke-opacity="${g ? 0.06 : 0.16}"/>\n`;
-    body += `<text x="90" y="${(y + 4).toFixed(1)}" text-anchor="end" font-size="11" fill="#8B94B3">${+(step * g).toFixed(2)}</text>\n`;
+    b += `<line x1="135" y1="${y.toFixed(1)}" x2="1452" y2="${y.toFixed(1)}" stroke="#FFFFFF" stroke-opacity="${g ? 0.08 : 0.18}" ${g ? 'stroke-dasharray="5 6"' : ""}/>\n`;
+    b += `<text x="123" y="${(y + 6).toFixed(1)}" text-anchor="end" font-size="17" fill="${C_MUTED}">${+(step * g).toFixed(2)}</text>\n`;
   }
-  // janela de 3 horas com mais commits
+  const cxH = (i) => 160 + i * 55.5;
   let peak = 0, best = -1;
   for (let i = 0; i < 22; i++) { const s = hours[i] + hours[i + 1] + hours[i + 2]; if (s > best) { best = s; peak = i; } }
-  const bx = (i) => 112.4 + i * 42.84;
   if (best > 0) {
-    const pk = kf(`0%,${pct(2.6)}{opacity:0;animation-timing-function:ease}${pct(3.2)},100%{opacity:1}`);
-    const x = bx(peak) - 5.4;
-    body += `<g style="animation:${pk} ${DUR}s infinite"><rect x="${x.toFixed(1)}" y="358" width="122.5" height="118.0" rx="10" fill="#5EEAD4" fill-opacity="0.08"/><text x="${(x + 61.25).toFixed(1)}" y="374" text-anchor="middle" font-size="12" font-weight="600" fill="#5EEAD4">Horário de pico</text></g>\n`;
+    const px = cxH(peak + 1);
+    b += `<rect x="${(px - 75).toFixed(1)}" y="507" width="150" height="33" rx="16.5" fill="#2A1D57"/>\n`;
+    b += `<text x="${px.toFixed(1)}" y="529" text-anchor="middle" font-size="15" font-weight="500" fill="#B79CFF">Horário de pico</text>\n`;
   }
   hours.forEach((v, i) => {
-    const h = Math.max((v / yMax) * chartH, v ? 2.6 : 0);
-    if (!h) return;
-    const s = 1.5 + i * 0.04;
-    const name = kf(`0%,${pct(s)}{transform:scaleY(0);animation-timing-function:cubic-bezier(.2,.8,.2,1)}${pct(s + 0.7)},100%{transform:scaleY(1)}`);
-    const isPeak = best > 0 && i >= peak && i < peak + 3;
-    body += `<rect class="b" x="${bx(i).toFixed(1)}" y="${(y0 - h).toFixed(1)}" width="26" height="${h.toFixed(1)}" rx="5" fill="url(#${isPeak ? "barPeak" : "bar"})" style="animation:${name} ${DUR}s infinite"/>\n`;
+    if (!v) return;
+    const h = Math.max((v / yMax) * chartH, 5);
+    const s = 0.6 + i * 0.03;
+    const name = kf(`0%,${pct(s)}{transform:scaleY(0);animation-timing-function:cubic-bezier(.2,.8,.2,1)}${pct(s + 0.6)},100%{transform:scaleY(1)}`);
+    b += `<path class="b" d="M${(cxH(i) - 18.5).toFixed(1)} ${y0}V${(y0 - h + 6).toFixed(1)}q0-6 6-6h25q6 0 6 6V${y0}z" fill="url(#barGrad)" style="${anim(name)}"/>\n`;
   });
   [0, 3, 6, 9, 12, 15, 18, 21, 23].forEach((i) => {
-    body += `<text x="${(bx(i) + 13).toFixed(1)}" y="492" text-anchor="middle" font-size="11" fill="#8B94B3">${String(i).padStart(2, "0")}</text>\n`;
+    b += `<text x="${cxH(i).toFixed(1)}" y="649" text-anchor="middle" font-size="17" fill="${C_MUTED}">${String(i).padStart(2, "0")}</text>\n`;
   });
 
   // Linguagens
-  body += donut({ cx: 450, cy: 668, items: byRepo, delay: 2.4, legendX: 74, legendY: 611, title: "Linguagens por repositório", tileX: 40 });
-  body += donut({ cx: 1020, cy: 668, items: byCommit, delay: 2.7, legendX: 644, legendY: 611, title: "Linguagens por commit", tileX: 610 });
+  b += langTile({ x: 55, w: 707, title: "Linguagens por repositório", icon: ICONS.code, iconFill: "#221B45", items: byRepo, delay: 1.0, nameX: 137, pctX: 425, cx: 630 });
+  b += langTile({ x: 790, w: 690, title: "Linguagens por commit", icon: ICONS.layers, iconFill: "#1B2440", items: byCommit, delay: 1.2, nameX: 871, pctX: 1119, cx: 1326 });
 
-  const updated = fmtDay(todayLocal(), true);
-  body += `<text x="1160" y="54" text-anchor="end" font-size="12" fill="#5B6488">Atualizado em ${updated}</text>\n`;
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="t d">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="t d">
 <title id="t">GitHub stats de ${esc(DISPLAY_NAME)}</title>
 <desc id="d">Total de contribuições, sequência atual e maior sequência, commits por hora e linguagens por repositório e por commit.</desc>
 <style>
 text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif;font-variant-numeric:tabular-nums}
 .b{transform-box:fill-box;transform-origin:50% 100%}
-#content{animation:master ${DUR}s infinite}
-@keyframes master{0%{opacity:0}3%{opacity:1}93%{opacity:1}97%{opacity:0}100%{opacity:0}}
 ${keyframes.join("")}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}.dot{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A0F1F"/><stop offset="1" stop-color="#0F1530"/></linearGradient>
-  <radialGradient id="glowA" cx="0.12" cy="0.05" r="0.55"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.28"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/></radialGradient>
-  <radialGradient id="glowB" cx="0.92" cy="0.98" r="0.5"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.2"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
-  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.055"/></pattern>
-  <linearGradient id="numfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C9D2F5"/></linearGradient>
-  <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5EEAD4"/><stop offset="0.55" stop-color="#818CF8"/><stop offset="1" stop-color="#C084FC"/></linearGradient>
-  <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B9BFF"/><stop offset="1" stop-color="#4338CA" stop-opacity="0.75"/></linearGradient>
-  <linearGradient id="barPeak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7CF3E0"/><stop offset="1" stop-color="#6366F1"/></linearGradient>
-  <linearGradient id="tileEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5EEAD4" stop-opacity="0.55"/><stop offset="0.5" stop-color="#818CF8" stop-opacity="0.35"/><stop offset="1" stop-color="#C084FC" stop-opacity="0.55"/></linearGradient>
-  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <clipPath id="frame"><rect width="1200" height="800" rx="28"/></clipPath>
+  <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+  <linearGradient id="gPurple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9F7AFA"/><stop offset="1" stop-color="#6D3FE6"/></linearGradient>
+  <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B9EFF"/><stop offset="1" stop-color="#1A6FE0"/></linearGradient>
+  <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C08A"/><stop offset="1" stop-color="#0E9466"/></linearGradient>
+  <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#6236D9"/></linearGradient>
 </defs>
-<g clip-path="url(#frame)">
-  <rect width="1200" height="800" fill="url(#bg)"/>
-  <rect width="1200" height="800" fill="url(#dots)"/>
-  <rect width="1200" height="800" fill="url(#glowA)"/>
-  <rect width="1200" height="800" fill="url(#glowB)"/>
-</g>
-<rect x="0.5" y="0.5" width="1199" height="799" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
-<g id="content">
-${body}</g>
-</svg>
+<rect width="${W}" height="${H}" rx="28" fill="${C_BG}"/>
+<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+${b}</svg>
 `;
 }
 
