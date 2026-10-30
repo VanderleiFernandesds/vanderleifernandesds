@@ -36,7 +36,14 @@ const nodes = [[42, 90], [119, 150], [77, 260], [175, 70], [210, 210], [49, 395]
 const edges = [[0, 1], [1, 2], [1, 3], [3, 4], [2, 4], [2, 5], [5, 6], [6, 7], [4, 6],
   [8, 9], [9, 10], [9, 11], [11, 12], [10, 12], [10, 13], [13, 14], [14, 15], [12, 14]];
 const net = edges.map(([a, b]) => `<line x1="${nodes[a][0]}" y1="${nodes[a][1]}" x2="${nodes[b][0]}" y2="${nodes[b][1]}"/>`).join("");
-const dots = nodes.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 ? 3.5 : 4.5}"${i % 4 === 2 ? ' class="pulse"' : ""}/>`).join("");
+const dots = nodes.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 ? 3.5 : 4.5}" class="tw" style="animation-delay:${((i * 0.37) % 3).toFixed(2)}s"/>`).join("");
+// luzes que percorrem as linhas da rede
+const runners = edges.map(([a, b], i) => {
+  const [x1, y1] = nodes[a], [x2, y2] = nodes[b];
+  const dur = (3 + (i % 5) * 0.7).toFixed(1), begin = ((i * 0.9) % 6).toFixed(1);
+  const path = i % 2 ? `M${x1} ${y1}L${x2} ${y2}` : `M${x2} ${y2}L${x1} ${y1}`;
+  return `<circle r="3" fill="${ACCENT_L}" opacity="0"><animateMotion path="${path}" dur="${dur}s" begin="${begin}s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.9;0" dur="${dur}s" begin="${begin}s" repeatCount="indefinite"/></circle>`;
+}).join("");
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="t d">
 <title id="t">Vanderlei Fernandes, Full Stack Developer</title>
@@ -47,16 +54,25 @@ text{font-family:${FONT}}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .pulse{animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.tw{animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{fill:#3A4A6B}50%{fill:${ACCENT_L}}}
+.drift{animation:drift 8s linear infinite}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-28px,-28px)}}
+.sweep{animation:sweep 9s ease-in-out infinite}
+@keyframes sweep{0%{transform:translateX(-500px);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(${W + 100}px);opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
   <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.05"/></pattern>
+  <filter id="soft" x="-100%" y="-20%" width="300%" height="140%"><feGaussianBlur stdDeviation="50"/></filter>
   <clipPath id="frame"><rect width="${W}" height="${H}" rx="28"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
   <rect width="${W}" height="${H}" fill="#0D1117"/>
-  <rect width="${W}" height="${H}" fill="url(#dots)"/>
+  <rect class="drift" width="${W + 56}" height="${H + 56}" fill="url(#dots)"/>
+  <g class="sweep"><rect x="80" y="-60" width="200" height="${H + 120}" fill="#5EB1FF" fill-opacity="0.06" filter="url(#soft)" transform="skewX(-12)"/></g>
   <g stroke="#26324A" stroke-width="1.5">${net}</g>
+  <g>${runners}</g>
   <g fill="#3A4A6B">${dots}</g>
 </g>
 <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
