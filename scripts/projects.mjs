@@ -125,3 +125,33 @@ for (const p of PROJECTS) {
   writeFileSync(join(DIR, `${p.slug}.svg`), card(p));
   console.log("SVG gerado:", p.slug);
 }
+
+// Título da seção
+const TW = 1530, TH = 150;
+const rocket = `<g fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5c2.6-1.3 5-1.6 6-1 .6 1 .3 3.4-1 6l-6.3 6.3-4-4z"/><path d="M9.2 11.8L6 11.3l2.4-2.9 3.6.2M12.2 14.8l.5 3.2 2.9-2.4-.2-3.6"/><path d="M6.5 15.5c-1.5.5-2.5 2.5-2.5 4.5 2 0 4-1 4.5-2.5"/></g><circle cx="16" cy="8" r="1.6" fill="#FFFFFF"/>`;
+writeFileSync(join(DIR, "title.svg"), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${TW} ${TH}" width="${TW}" height="${TH}" role="img" aria-labelledby="t">
+<title id="t">Projetos em destaque</title>
+<style>
+text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif}
+.in{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+  <linearGradient id="tg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#EC4899"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+  <linearGradient id="ib" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9F7AFA"/><stop offset="1" stop-color="#6D3FE6"/></linearGradient>
+</defs>
+<rect width="${TW}" height="${TH}" rx="28" fill="#0D1117"/>
+<rect x="0.5" y="0.5" width="${TW - 1}" height="${TH - 1}" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+<g class="in" transform="translate(20 10)">
+<rect x="20" y="22" width="86" height="84" rx="18" fill="url(#ib)"/>
+<g transform="translate(39 40) scale(2)">${rocket}</g>
+<text x="134" y="68" font-size="46" font-weight="800" fill="#FFFFFF" letter-spacing="-0.6">Projetos em <tspan fill="url(#tg)">destaque</tspan></text>
+<text x="136" y="102" font-size="20" fill="#A3ACBD">Interfaces, produtos e experimentos que construí do design ao código</text>
+<g transform="translate(1470 64)" text-anchor="end">
+<text font-size="56" font-weight="800" fill="#FFFFFF" fill-opacity="0.08" y="18">0${PROJECTS.length}</text>
+</g>
+</g>
+</svg>
+`);
+console.log("SVG gerado: title");

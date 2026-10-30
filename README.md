@@ -10,7 +10,9 @@
 
 ---
 
-### 🚀 Projetos em destaque
+<p align="center">
+  <img width="98%" src="assets/projects/title.svg" alt="Projetos em destaque" />
+</p>
 
 <p align="center">
   <a href="https://vanderleifernandesds.github.io/pichau-redesign/"><img width="49%" src="assets/projects/pichau-redesign.svg" alt="Pichau Redesign: redesign conceitual de e-commerce. React, JavaScript, Tailwind CSS." /></a>
