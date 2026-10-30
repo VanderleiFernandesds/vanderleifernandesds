@@ -34,5 +34,5 @@
 </p>
 
 <p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=VanderleiFernandesds&bg_color=0D1117&color=C9D1D9&line=8B5CF6&point=3B82F6&area=true&area_color=8B5CF6&hide_border=true&radius=18" alt="Gráfico de atividade do GitHub de Vanderlei Fernandes" />
+  <img width="100%" src="assets/github-activity.svg" alt="Gráfico de atividade do GitHub de Vanderlei Fernandes" />
 </p>

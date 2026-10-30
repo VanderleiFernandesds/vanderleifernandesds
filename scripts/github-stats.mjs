@@ -416,7 +416,93 @@ ${b}</svg>
 `;
 }
 
+// ---------- Gráfico de atividade (últimos 31 dias) ----------
+
+function buildActivity(days) {
+  const AW = 1530, AH = 470;
+  const today = todayLocal();
+  const pts = [];
+  for (let i = 30; i >= 0; i--) {
+    const d = new Date(today + "T12:00:00Z");
+    d.setUTCDate(d.getUTCDate() - i);
+    const iso = d.toISOString().slice(0, 10);
+    pts.push({ iso, v: days.get(iso) || 0 });
+  }
+  const total = pts.reduce((s, p) => s + p.v, 0);
+  const active = pts.filter((p) => p.v > 0).length;
+  const maxV = Math.max(...pts.map((p) => p.v), 1);
+  const raw = (maxV * 1.12) / 4;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const step = Math.max(1, [1, 2, 2.5, 5, 10].map((m) => m * mag).find((v) => v >= raw));
+  const yMax = step * 4;
+  const L = 110, R = 1450, T = 175, B = 395;
+  const X = (i) => L + ((R - L) * i) / 30;
+  const Y = (v) => B - ((B - T) * v) / yMax;
+
+  // curva suave (Catmull-Rom para Bézier), sem passar abaixo de zero
+  const P = pts.map((p, i) => [X(i), Y(p.v)]);
+  let line = `M${P[0][0].toFixed(1)} ${P[0][1].toFixed(1)}`;
+  for (let i = 0; i < P.length - 1; i++) {
+    const p0 = P[i - 1] || P[i], p1 = P[i], p2 = P[i + 1], p3 = P[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, Math.min(B, p1[1] + (p2[1] - p0[1]) / 6)];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, Math.min(B, p2[1] - (p3[1] - p1[1]) / 6)];
+    line += `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+  }
+  const area = `${line}L${R} ${B}L${L} ${B}Z`;
+
+  let g = "";
+  for (let k = 0; k <= 4; k++) {
+    const y = Y(step * k);
+    g += `<line x1="${L}" y1="${y.toFixed(1)}" x2="${R}" y2="${y.toFixed(1)}" stroke="#FFFFFF" stroke-opacity="${k ? 0.08 : 0.18}" ${k ? 'stroke-dasharray="5 6"' : ""}/>`;
+    g += `<text x="${L - 14}" y="${(y + 6).toFixed(1)}" text-anchor="end" font-size="17" fill="#C9D1D9">${+(step * k).toFixed(2)}</text>\n`;
+  }
+  pts.forEach((p, i) => {
+    if (i % 5 === 0 || i === 30) {
+      const [, m, d] = p.iso.split("-").map(Number);
+      g += `<text x="${X(i).toFixed(1)}" y="${B + 30}" text-anchor="middle" font-size="16" fill="#C9D1D9">${d} ${MESES[m - 1]}</text>\n`;
+    }
+  });
+  const dots = P.map(([x, y], i) => pts[i].v ? `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="#0D1117" stroke="#3B82F6" stroke-width="3"/>` : "").join("");
+
+  const statPill = (x, label) => {
+    const w = 40 + label.length * 8.4;
+    return `<rect x="${(x - w).toFixed(0)}" y="42" width="${w.toFixed(0)}" height="44" rx="22" fill="#161B24" stroke="#1F2633"/><text x="${(x - w / 2).toFixed(1)}" y="69" text-anchor="middle" font-size="15" fill="#C9D1D9">${label}</text>`;
+  };
+  const p2 = `${active} dias ativos`;
+  const w2 = 40 + p2.length * 8.4;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${AW} ${AH}" width="${AW}" height="${AH}" role="img" aria-labelledby="t d">
+<title id="t">Atividade no GitHub de ${esc(DISPLAY_NAME)}</title>
+<desc id="d">Contribuições por dia nos últimos 31 dias.</desc>
+<style>
+text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif;font-variant-numeric:tabular-nums}
+.ln{stroke-dasharray:4000;stroke-dashoffset:0;animation:draw 2.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes draw{from{stroke-dashoffset:4000}to{stroke-dashoffset:0}}
+.ar,.dt{animation:fade 1s ease 1.2s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+  <linearGradient id="aFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6" stop-opacity="0.35"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient>
+  <linearGradient id="aLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#3B82F6"/></linearGradient>
+</defs>
+<rect width="${AW}" height="${AH}" rx="28" fill="#0D1117"/>
+<rect x="0.5" y="0.5" width="${AW - 1}" height="${AH - 1}" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+${iconBox({ x: 55, y: 40, w: 49, h: 48, rx: 10, fill: "#3B2380", icon: `<path fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M3 17l5-6 4 3 4-6 5 4"/>` })}
+<text x="128" y="72" font-size="23" font-weight="700" fill="#F3F4F6">Atividade nos últimos 31 dias</text>
+${statPill(1480, `${total} contribuições`)}
+${statPill(1480 - (40 + `${total} contribuições`.length * 8.4) - 12, p2)}
+${g}
+<path class="ar" d="${area}" fill="url(#aFill)"/>
+<path class="ln" d="${line}" fill="none" stroke="url(#aLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="dt">${dots}</g>
+</svg>
+`;
+}
+
 const data = process.env.MOCK ? mockData() : await fetchData();
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(process.env.OUT || OUT, build(data));
-console.log("SVG gerado:", process.env.OUT || OUT);
+const OUT_ACT = process.env.OUT_ACT || join(dirname(OUT), "github-activity.svg");
+writeFileSync(OUT_ACT, buildActivity(data.days));
+console.log("SVGs gerados:", process.env.OUT || OUT, OUT_ACT);
