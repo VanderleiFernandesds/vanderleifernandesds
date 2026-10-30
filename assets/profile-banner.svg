@@ -1,67 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-  <title id="title">Vanderlei Fernandes</title>
-  <desc id="desc">Full Stack Developer, Front-End e UI/UX</desc>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="680" viewBox="0 0 1600 680" role="img" aria-labelledby="title desc">
+  <title id="title">Vanderlei Fernandes, Full Stack Developer</title>
+  <desc id="desc">Animated developer profile banner featuring Front-End, UI/UX, React, JavaScript and Tailwind CSS.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0A0F1F"/>
-      <stop offset="1" stop-color="#111833"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#5EEAD4"/>
-      <stop offset="0.55" stop-color="#818CF8"/>
-      <stop offset="1" stop-color="#C084FC"/>
-    </linearGradient>
-    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#5EEAD4" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#5EEAD4" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#C084FC" stop-opacity="0.3"/>
-      <stop offset="1" stop-color="#C084FC" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#CBD5E1" stroke-opacity="0.05" stroke-width="1"/>
-    </pattern>
-    <clipPath id="frame"><rect width="1200" height="300" rx="20"/></clipPath>
     <style>
-      .float { animation: float 8s ease-in-out infinite; }
-      .float2 { animation: float 10s ease-in-out infinite reverse; }
-      .blink { animation: blink 1.1s steps(1) infinite; }
-      .fade { opacity: 0; animation: fade 1.2s ease-out forwards; }
-      .d1 { animation-delay: .15s; } .d2 { animation-delay: .45s; } .d3 { animation-delay: .75s; }
-      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-      @keyframes blink { 0%,50% { opacity: 1; } 50.01%,100% { opacity: 0; } }
-      @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      .sans{font-family:Inter,Segoe UI,Arial,sans-serif}
+      .in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+      @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+      .pulse{animation:pulse 2s ease-in-out infinite}
+      @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+      .float{animation:float 5s ease-in-out infinite}
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+      @media(prefers-reduced-motion:reduce){.in,.pulse,.float{animation:none}}
     </style>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#263653"/></pattern>
+    <radialGradient id="glowA"><stop stop-color="#22D3EE" stop-opacity=".20"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowB"><stop stop-color="#6366F1" stop-opacity=".24"/><stop offset="1" stop-color="#6366F1" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22D3EE"/><stop offset="1" stop-color="#818CF8"/></linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22D3EE" stop-opacity="0"/><stop offset=".5" stop-color="#E0FBFF"/><stop offset="1" stop-color="#818CF8" stop-opacity="0"/></linearGradient>
+    <clipPath id="frame"><rect width="1600" height="680" rx="28"/></clipPath>
+    <clipPath id="avatar"><circle cx="1320" cy="340" r="184"/></clipPath>
   </defs>
-
   <g clip-path="url(#frame)">
-    <rect width="1200" height="300" fill="url(#bg)"/>
-    <rect width="1200" height="300" fill="url(#grid)"/>
-    <circle class="float" cx="1010" cy="70" r="190" fill="url(#glowA)"/>
-    <circle class="float2" cx="1120" cy="260" r="160" fill="url(#glowB)"/>
-
-    <!-- Code window -->
-    <g transform="translate(790 66)"><g class="fade d3">
-      <rect width="330" height="168" rx="14" fill="#0D1428" stroke="#CBD5E1" stroke-opacity="0.12"/>
-      <circle cx="22" cy="22" r="5" fill="#F87171"/>
-      <circle cx="40" cy="22" r="5" fill="#FBBF24"/>
-      <circle cx="58" cy="22" r="5" fill="#34D399"/>
-      <g font-family="'Fira Code', 'JetBrains Mono', Consolas, monospace" font-size="14">
-        <text x="22" y="66" fill="#818CF8">const <tspan fill="#CBD5E1">dev</tspan> <tspan fill="#94A3B8">=</tspan> <tspan fill="#94A3B8">{</tspan></text>
-        <text x="40" y="90" fill="#5EEAD4">foco<tspan fill="#94A3B8">:</tspan> <tspan fill="#C084FC">"Front-End + UI/UX"</tspan><tspan fill="#94A3B8">,</tspan></text>
-        <text x="40" y="114" fill="#5EEAD4">stack<tspan fill="#94A3B8">:</tspan> <tspan fill="#C084FC">"Full Stack"</tspan><tspan fill="#94A3B8">,</tspan></text>
-        <text x="40" y="138" fill="#5EEAD4">base<tspan fill="#94A3B8">:</tspan> <tspan fill="#C084FC">"São Paulo"</tspan></text>
-        <text x="22" y="158" fill="#94A3B8">}<tspan class="blink" fill="#5EEAD4">▍</tspan></text>
+    <rect width="1600" height="680" fill="#080E1C"/><rect width="1600" height="680" fill="url(#dots)"/>
+    <ellipse cx="240" cy="90" rx="620" ry="360" fill="url(#glowA)"/>
+    <ellipse cx="1320" cy="350" rx="500" ry="430" fill="url(#glowB)"/>
+    <g stroke="#263653" stroke-width="1.5" opacity=".75">
+      <path d="M1010 110L1120 180 1210 80 1320 155 1450 90M1010 110L1040 260 1150 320 1210 80M1040 260L1120 180 1150 320 1280 430 1450 90M1150 320L1320 155 1430 300 1280 430 1450 90M1430 300L1530 390 1450 520 1280 430M1150 320L1080 480 1200 590 1450 520" fill="none"/>
+    </g>
+    <g fill="#526A99">
+      <circle cx="1010" cy="110" r="4"/><circle cx="1120" cy="180" r="4"/><circle cx="1210" cy="80" r="5" class="pulse"/><circle cx="1320" cy="155" r="4"/><circle cx="1450" cy="90" r="5" class="pulse"/><circle cx="1040" cy="260" r="4"/><circle cx="1150" cy="320" r="5"/><circle cx="1430" cy="300" r="4"/><circle cx="1530" cy="390" r="4"/><circle cx="1280" cy="430" r="5"/><circle cx="1080" cy="480" r="4"/><circle cx="1200" cy="590" r="4"/><circle cx="1450" cy="520" r="4"/>
+    </g>
+    <g fill="#22D3EE"><circle r="4"><animateMotion path="M1010 110L1120 180" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle r="4"><animateMotion path="M1150 320L1280 430" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle></g>
+    <g class="in" style="animation-delay:.1s">
+      <rect x="72" y="62" width="332" height="44" rx="22" fill="#22D3EE" fill-opacity=".10" stroke="#22D3EE" stroke-opacity=".55"/>
+      <circle cx="98" cy="84" r="5" fill="#22D3EE" class="pulse"/>
+      <text class="sans" x="120" y="92" font-size="21" font-weight="650" fill="#67E8F9">FULL STACK DEVELOPER</text>
+    </g>
+    <g class="in" style="animation-delay:.25s">
+      <text class="sans" x="70" y="218" font-size="94" font-weight="800" letter-spacing="-3" fill="#F1F5F9">Vanderlei</text>
+      <text class="sans" x="70" y="316" font-size="94" font-weight="800" letter-spacing="-3" fill="#F1F5F9">Fernandes</text>
+      <text class="sans" x="74" y="365" font-size="29" font-weight="600" fill="#A5B4FC">Front-End Developer <tspan fill="#52627F">|</tspan> UI/UX Designer</text>
+      <text class="sans" x="74" y="414" font-size="23" fill="#9AA9C4">Transformando ideias em experiências digitais.</text>
+    </g>
+    <g class="in" style="animation-delay:.5s">
+      <rect x="72" y="466" width="190" height="48" rx="24" fill="#111D32" stroke="#22D3EE" stroke-opacity=".55"/><circle cx="98" cy="490" r="5" fill="#22D3EE"/><text class="sans" x="116" y="498" font-size="21" font-weight="600" fill="#E6F8FF">React</text>
+      <rect x="276" y="466" width="220" height="48" rx="24" fill="#111D32" stroke="#818CF8" stroke-opacity=".6"/><circle cx="302" cy="490" r="5" fill="#818CF8"/><text class="sans" x="320" y="498" font-size="21" font-weight="600" fill="#E6E9FF">JavaScript</text>
+      <rect x="510" y="466" width="238" height="48" rx="24" fill="#111D32" stroke="#22D3EE" stroke-opacity=".55"/><circle cx="536" cy="490" r="5" fill="#22D3EE"/><text class="sans" x="554" y="498" font-size="21" font-weight="600" fill="#E6F8FF">Tailwind CSS</text>
+      <rect x="72" y="528" width="190" height="48" rx="24" fill="#111D32" stroke="#818CF8" stroke-opacity=".6"/><circle cx="98" cy="552" r="5" fill="#818CF8"/><text class="sans" x="116" y="560" font-size="21" font-weight="600" fill="#E6E9FF">TypeScript</text>
+      <rect x="276" y="528" width="190" height="48" rx="24" fill="#111D32" stroke="#22D3EE" stroke-opacity=".55"/><circle cx="302" cy="552" r="5" fill="#22D3EE"/><text class="sans" x="320" y="560" font-size="21" font-weight="600" fill="#E6F8FF">Figma</text>
+    </g>
+    <g class="in" style="animation-delay:.8s">
+      <path d="M72 615H748" stroke="#25334D" stroke-width="1.5"/>
+      <text class="sans" x="74" y="650" font-size="19" fill="#71819F">Análise e Desenvolvimento de Sistemas · UNICID</text>
+    </g>
+    <g class="float">
+      <circle cx="1320" cy="340" r="224" fill="#22D3EE" opacity=".08"/>
+      <circle cx="1320" cy="340" r="204" fill="none" stroke="url(#ring)" stroke-width="3" stroke-dasharray="580 40"/>
+      <circle cx="1320" cy="340" r="184" fill="#111D32" stroke="#334766" stroke-width="2"/>
+      <g clip-path="url(#avatar)">
+        <rect x="1136" y="156" width="368" height="368" fill="#101B30"/>
+        <circle cx="1320" cy="270" r="72" fill="#263B5B"/>
+        <path d="M1180 520c12-112 65-166 140-166s128 54 140 166" fill="#263B5B"/>
+        <path d="M1244 265c8-48 35-74 76-74 42 0 69 28 76 74-19-17-44-27-76-27s-57 10-76 27" fill="#3D587D"/>
+        <text class="sans" x="1320" y="475" text-anchor="middle" font-size="17" letter-spacing="3" fill="#A5B4FC">ADICIONE SUA FOTO</text>
       </g>
-    </g></g>
-
-    <!-- Text -->
-    <g font-family="'Segoe UI', Inter, system-ui, -apple-system, sans-serif">
-      <text x="80" y="104" class="fade d1" fill="#94A3B8" font-size="16" letter-spacing="4" font-weight="600">OLÁ, EU SOU</text>
-      <text x="78" y="160" class="fade d1" fill="#FFFFFF" font-size="54" font-weight="800" letter-spacing="-1">Vanderlei Fernandes</text>
-      <rect x="80" y="182" width="120" height="4" rx="2" fill="url(#accent)" class="fade d2"/>
-      <text x="80" y="222" class="fade d2" fill="#CBD5E1" font-size="22" font-weight="500">Full Stack Developer <tspan fill="#5EEAD4">·</tspan> Front-End <tspan fill="#C084FC">·</tspan> UI/UX</text>
+      <circle cx="1460" cy="208" r="12" fill="#22D3EE" stroke="#080E1C" stroke-width="6"/>
+      <circle cx="1180" cy="470" r="9" fill="#818CF8" stroke="#080E1C" stroke-width="5"/>
     </g>
   </g>
+  <rect x=".5" y=".5" width="1599" height="679" rx="28" fill="none" stroke="#263653"/>
 </svg>
