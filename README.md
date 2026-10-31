@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile-banner.svg" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. ADS, UNICID. Pós-graduando em IA. Freelancer." width="98%" />
+  <img src="assets/profile-banner.webp" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. ADS, UNICID. Pós-graduando em IA. Freelancer." width="98%" />
 </p>
 
 <p align="center">
