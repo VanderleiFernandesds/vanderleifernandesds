@@ -9,6 +9,13 @@
 </p>
 
 <p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg" />
+    <img width="98%" src="assets/about-light.svg" alt="Sobre mim: Sou desenvolvedor Full Stack com foco em Front-End e UI/UX, formado em Análise e Desenvolvimento de Sistemas (UNICID). Gosto de transformar ideias em experiências digitais, unindo código, design e performance para criar soluções modernas, intuitivas e com propósito. Meus diferenciais: foco em UI/UX, performance, visão completa de Front-End e Back-End, evolução constante." />
+  </picture>
+</p>
+
+<p align="center">
   <img width="98%" src="assets/projects/title.svg" alt="Projetos em destaque" />
 </p>
 
