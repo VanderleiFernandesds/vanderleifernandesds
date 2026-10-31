@@ -1,4 +1,4 @@
-name: Atualizar GitHub stats
+name: Atualizar GitHub em números
 
 on:
   schedule:
@@ -7,8 +7,8 @@ on:
   push:
     branches: [main]
     paths:
-      - scripts/github-stats.mjs
-      - .github/workflows/github-stats.yml
+      - scripts/github-numbers.mjs
+      - .github/workflows/github-numbers.yml
 
 permissions:
   contents: write
@@ -22,13 +22,13 @@ jobs:
         with:
           node-version: 20
       - name: Gerar SVG
-        run: node scripts/github-stats.mjs
+        run: node scripts/github-numbers.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add assets/github-stats.svg assets/github-activity.svg
-          git diff --cached --quiet || git commit -m "Atualiza GitHub stats"
+          git add assets/github-numbers.svg
+          git diff --cached --quiet || git commit -m "Atualiza GitHub em números"
           git push

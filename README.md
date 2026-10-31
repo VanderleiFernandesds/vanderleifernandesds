@@ -30,9 +30,5 @@
 
 
 <p align="center">
-  <img width="100%" src="assets/github-stats.svg" alt="GitHub stats de Vanderlei Fernandes: contribuições, sequências, commits por hora e linguagens" />
-</p>
-
-<p align="center">
-  <img width="100%" src="assets/github-activity.svg" alt="Gráfico de atividade do GitHub de Vanderlei Fernandes" />
+  <img width="100%" src="assets/github-numbers.svg" alt="GitHub em números: commits, repositórios, stars, forks, contribuições dos últimos 12 meses e linguagens mais usadas" />
 </p>
