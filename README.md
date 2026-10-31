@@ -19,7 +19,7 @@
   <img width="49%" src="assets/projects/2pontos.svg" alt="2:pontos: identidade e presença digital para criação de sites. React, Tailwind CSS, UI/UX." />
 </p>
 
-### 🧰 Tecnologias e ferramentas
+
 
 <p align="center">
   <img width="100%" src="assets/tech-stack.svg" alt="Front-End: HTML, CSS, JavaScript, TypeScript, React, Next.js, Vite, Tailwind CSS. Back-End: Node.js, Express, MySQL, Python, FastAPI. Ferramentas: Figma, Git, GitHub." />
@@ -27,7 +27,7 @@
 
 ---
 
-### 📊 GitHub Analytics
+
 
 <p align="center">
   <img width="100%" src="assets/github-stats.svg" alt="GitHub stats de Vanderlei Fernandes: contribuições, sequências, commits por hora e linguagens" />
