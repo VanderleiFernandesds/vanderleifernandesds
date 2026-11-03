@@ -22,7 +22,7 @@ const GROUPS = [
   {
     title: "Back-End", color: "#1D8CF8", grad: ["#3B9EFF", "#1A6FE0"], cols: 2,
     items: [
-      ["Node.js", si.siNodedotjs], ["Express", si.siExpress, "#FFFFFF"], ["MySQL", si.siMysql, "#5B9BD5"],
+      ["Node.js", si.siNodedotjs], ["Express", si.siExpress, "#FFFFFF"], ["MySQL", si.siMysql, "#5B9BD5"], ["PostgreSQL", si.siPostgresql, "#6B8FE8"],
       ["Python", si.siPython, "#4B8BD6"], ["FastAPI", si.siFastapi],
     ],
   },

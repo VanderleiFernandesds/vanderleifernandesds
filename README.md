@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img width="100%" src="assets/tech-stack.svg" alt="Front-End: HTML, CSS, JavaScript, TypeScript, React, Vite, Tailwind CSS. Back-End: Node.js, Express, MySQL, Python, FastAPI. Ferramentas: Figma, Git, GitHub." />
+  <img width="100%" src="assets/tech-stack.svg" alt="Front-End: HTML, CSS, JavaScript, TypeScript, React, Vite, Tailwind CSS. Back-End: Node.js, Express, MySQL, PostgreSQL, Python, FastAPI. Ferramentas: Figma, Git, GitHub." />
 </p>
 
 ---
