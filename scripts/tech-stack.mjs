@@ -15,7 +15,7 @@ const GROUPS = [
     title: "Front-End", color: "#8B5CF6", grad: ["#9F7AFA", "#6D3FE6"], cols: 3,
     items: [
       ["HTML", si.siHtml5], ["CSS", si.siCss, "#9B6BDF"], ["JavaScript", si.siJavascript],
-      ["TypeScript", si.siTypescript], ["React", si.siReact], ["Next.js", si.siNextdotjs, "#FFFFFF"],
+      ["TypeScript", si.siTypescript], ["React", si.siReact],
       ["Vite", si.siVite], ["Tailwind CSS", si.siTailwindcss],
     ],
   },

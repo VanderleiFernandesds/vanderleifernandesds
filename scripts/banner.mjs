@@ -19,7 +19,7 @@ const ICON = {
   bag: `<g fill="none" stroke="${ACCENT_L}" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></g>`,
 };
 
-const CHIPS = [["pin", "São Paulo, SP"], ["book", "ADS · UNICID"], ["cap", "Pós-graduando em IA"], ["bag", "Freelancer"]];
+const CHIPS = [["pin", "São Paulo, SP"], ["book", "ADS · UNICID"], ["bag", "Freelancer"]];
 
 const chipW = CHIPS.map(([, l]) => 66 + l.length * 9.9);
 let chips = "", cx = (W - (chipW.reduce((a, b) => a + b, 0) + 12 * (CHIPS.length - 1))) / 2;
@@ -47,7 +47,7 @@ const runners = edges.map(([a, b], i) => {
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-labelledby="t d">
 <title id="t">Vanderlei Fernandes, Full Stack Developer</title>
-<desc id="d">Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Análise e Desenvolvimento de Sistemas, UNICID. Pós-graduando em IA. Freelancer.</desc>
+<desc id="d">Desenvolvedor Full Stack com foco em Front-End e UI/UX. São Paulo, SP. Análise e Desenvolvimento de Sistemas, UNICID. Freelancer.</desc>
 <style>
 text{font-family:${FONT}}
 .in{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}

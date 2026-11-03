@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/profile-banner.webp" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. ADS, UNICID. Pós-graduando em IA. Freelancer." width="98%" />
+  <img src="assets/profile-banner.webp" alt="Vanderlei Fernandes, Full Stack Developer com foco em Front-End e UI/UX. São Paulo, SP. ADS, UNICID. Freelancer." width="98%" />
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img width="100%" src="assets/tech-stack.svg" alt="Front-End: HTML, CSS, JavaScript, TypeScript, React, Next.js, Vite, Tailwind CSS. Back-End: Node.js, Express, MySQL, Python, FastAPI. Ferramentas: Figma, Git, GitHub." />
+  <img width="100%" src="assets/tech-stack.svg" alt="Front-End: HTML, CSS, JavaScript, TypeScript, React, Vite, Tailwind CSS. Back-End: Node.js, Express, MySQL, Python, FastAPI. Ferramentas: Figma, Git, GitHub." />
 </p>
 
 ---
