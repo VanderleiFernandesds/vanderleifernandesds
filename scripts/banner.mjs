@@ -104,7 +104,6 @@ const BTN_ICON = {
   mail: (c) => `<g fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round"><rect x="1" y="2" width="14" height="12" rx="2.5"/><path d="M1.8 3.5L8 8.5l6.2-5"/></g>`,
 };
 const BUTTONS = [
-  { file: "btn-portfolio.svg", label: "Ver portfólio", icon: "arrow", iconRight: true, bg: "#FFFFFF", fg: "#0D1117", stroke: "#FFFFFF" },
   { file: "btn-linkedin.svg", label: "LinkedIn", icon: "linkedin", bg: "#0A66C2", fg: "#FFFFFF", stroke: "#0A66C2" },
   { file: "btn-email.svg", label: "E-mail", icon: "mail", bg: "#0D1117", fg: "#F3F4F6", stroke: "#2A3242" },
 ];
