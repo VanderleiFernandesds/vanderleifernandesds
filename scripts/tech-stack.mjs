@@ -34,7 +34,7 @@ const GROUPS = [
 
 const W = 1530;
 const C_TILE = "#121721", C_EDGE = "#1F2633", C_TEXT = "#F3F4F6", C_MUTED = "#C9D1D9";
-const PILL_H = 74, GAP = 14, PAD = 28, TOP = 120, HEAD = 92;
+const PILL_H = 74, GAP = 14, PAD = 28, TOP = 144, HEAD = 92;
 const rows = Math.max(...GROUPS.map((g) => Math.ceil(g.items.length / g.cols)));
 const TILE_H = HEAD + rows * PILL_H + (rows - 1) * GAP + PAD;
 const H = TOP + TILE_H + 42;
@@ -101,7 +101,11 @@ text{font-family:'Segoe UI Variable Display','Segoe UI','SF Pro Display',Inter,s
 ${defs}</defs>
 <rect width="${W}" height="${H}" rx="28" fill="#0D1117"/>
 <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
-${iconBox(55, 40, 49, 48, 10, "#1B2440", ICON_GROUP.header)}<text x="128" y="72" font-size="23" font-weight="700" fill="${C_TEXT}">Tecnologias e ferramentas</text>
+<defs><linearGradient id="ib" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E3E96"/><stop offset="1" stop-color="#0A1E44"/></linearGradient></defs>
+<g class="in"><rect x="55" y="22" width="89" height="87" rx="19" fill="url(#ib)" stroke="#2F7BEA" stroke-opacity=".7" stroke-width="1.5"/>
+<g transform="translate(77.5 43) scale(1.833)">${ICON_GROUP.header.replace(/#FFFFFF/g, "#5EB1FF")}</g>
+<text x="164" y="67" font-size="40" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">Tecnologias e ferramentas</text>
+<text x="165" y="100" font-size="22" fill="#C9D1D9">As tecnologias e ferramentas que uso no dia a dia.</text></g>
 ${body}</svg>
 `;
 
