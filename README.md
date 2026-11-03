@@ -23,5 +23,5 @@
 
 
 <p align="center">
-  <img width="100%" src="assets/github-numbers.svg" alt="GitHub em números: commits, repositórios, stars, forks, contribuições dos últimos 12 meses e linguagens mais usadas" />
+  <img width="100%" src="assets/github-numbers.svg" alt="GitHub em números: total de contribuições, sequência atual e maior sequência, calendário de contribuições dos últimos 12 meses, commits por hora e linguagens por repositório e por commit" />
 </p>
