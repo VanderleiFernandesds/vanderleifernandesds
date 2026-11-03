@@ -285,7 +285,7 @@ function build({ since, days, repos, commits }) {
   b += `<g class="in" style="animation-delay:.26s">${card(xC, Y1, wSide, H1)}`;
   b += `<text x="${xC + 40}" y="${Y1 + 50}" font-size="21" fill="${C_MUTED}">Maior sequência</text>`;
   b += `<text x="${xC + 36}" y="${Y1 + 134}" font-size="92" font-weight="800" fill="#FFFFFF" letter-spacing="-2">${bestStr}</text>`;
-  b += `<text x="${xC + 36 + bestStr.length * 54 + 18}" y="${Y1 + 134}" font-size="30" fill="${C_MUTED}">${st.best === 1 ? "dia" : "dias"}</text>`;
+  b += `<text x="${xC + 36 + bestStr.length * 50 + 14}" y="${Y1 + 134}" font-size="30" fill="${C_MUTED}">${st.best === 1 ? "dia" : "dias"}</text>`;
   b += `<text x="${xC + 40}" y="${Y1 + 168}" font-size="19" font-weight="600" fill="${TEAL}">${st.best ? faixa(st.bestStart, st.bestEnd, today) : "Sem contribuições ainda"}</text></g>\n`;
 
   // linha 2: calendário de contribuições
