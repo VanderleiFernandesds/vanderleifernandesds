@@ -50,13 +50,16 @@ async function fetchData() {
     const d = await gql(
       `query($login:String!,$after:String){ user(login:$login){ repositories(first:50, after:$after, ownerAffiliations:OWNER, isFork:false){
         pageInfo{ hasNextPage endCursor }
-        nodes{ name primaryLanguage{ name color } } } } }`,
+        nodes{ name isPrivate primaryLanguage{ name color } } } } }`,
       { login: LOGIN, after }
     );
     const r = d.user.repositories;
     repos.push(...r.nodes);
     after = r.pageInfo.hasNextPage ? r.pageInfo.endCursor : null;
   } while (after);
+  const priv = repos.filter((r) => r.isPrivate).length;
+  console.log(`Repositórios: ${repos.length} (${priv} privados)`);
+  if (!priv) console.warn("Nenhum repositório privado visível: configure o secret STATS_TOKEN com um token pessoal (escopos repo e read:user).");
 
   // commits do autor no branch padrão de cada repositório (horário e linguagem)
   const commits = [];
@@ -79,6 +82,7 @@ async function fetchData() {
     }
   }
 
+  console.log(`Commits: ${commits.length} · Contribuições: ${[...days.values()].reduce((a, b) => a + b, 0)}`);
   return { since: base.user.createdAt, days, repos, commits };
 }
 
